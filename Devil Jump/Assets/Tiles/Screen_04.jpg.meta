@@ -124,781 +124,281 @@ TextureImporter:
     - name: Screen_04_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 325
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 3
+        y: 297
+        width: 105
+        height: 90
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 325
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 128
+        y: 297
+        width: 105
+        height: 90
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 325
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 253
+        y: 297
+        width: 105
+        height: 90
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 325
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 377
+        y: 297
+        width: 105
+        height: 90
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 325
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 502
+        y: 297
+        width: 105
+        height: 90
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_5
       rect:
         serializedVersion: 2
-        x: 320
-        y: 325
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 627
+        y: 297
+        width: 105
+        height: 90
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_6
       rect:
         serializedVersion: 2
-        x: 384
-        y: 325
-        width: 64
-        height: 64
-      alignment: 0
+        x: 752
+        y: 297
+        width: 105
+        height: 90
+      alignment: 1
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_7
       rect:
         serializedVersion: 2
-        x: 448
-        y: 325
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2
+        y: 200
+        width: 105
+        height: 90
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_8
       rect:
         serializedVersion: 2
-        x: 512
-        y: 325
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 127
+        y: 200
+        width: 105
+        height: 90
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_9
       rect:
         serializedVersion: 2
-        x: 576
-        y: 325
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 252
+        y: 200
+        width: 105
+        height: 90
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_10
       rect:
         serializedVersion: 2
-        x: 640
-        y: 325
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 377
+        y: 201
+        width: 105
+        height: 90
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_11
       rect:
         serializedVersion: 2
-        x: 704
-        y: 325
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 502
+        y: 201
+        width: 105
+        height: 90
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_12
       rect:
         serializedVersion: 2
-        x: 768
-        y: 325
-        width: 64
-        height: 64
-      alignment: 0
+        x: 627
+        y: 202
+        width: 105
+        height: 90
+      alignment: 1
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_13
       rect:
         serializedVersion: 2
-        x: 0
-        y: 261
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 752
+        y: 200
+        width: 105
+        height: 90
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_14
       rect:
         serializedVersion: 2
-        x: 64
-        y: 261
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2
+        y: 103
+        width: 105
+        height: 90
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_15
       rect:
         serializedVersion: 2
-        x: 128
-        y: 261
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 127
+        y: 102
+        width: 105
+        height: 90
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_16
       rect:
         serializedVersion: 2
-        x: 192
-        y: 261
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 252
+        y: 103
+        width: 105
+        height: 90
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_17
       rect:
         serializedVersion: 2
-        x: 256
-        y: 261
-        width: 64
-        height: 64
-      alignment: 0
+        x: 377
+        y: 107
+        width: 105
+        height: 90
+      alignment: 1
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_18
       rect:
         serializedVersion: 2
-        x: 320
-        y: 261
-        width: 64
-        height: 64
-      alignment: 0
+        x: 502
+        y: 107
+        width: 105
+        height: 90
+      alignment: 1
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_19
       rect:
         serializedVersion: 2
-        x: 384
-        y: 261
-        width: 64
-        height: 64
-      alignment: 0
+        x: 627
+        y: 107
+        width: 105
+        height: 90
+      alignment: 1
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_20
       rect:
         serializedVersion: 2
-        x: 448
-        y: 261
-        width: 64
-        height: 64
-      alignment: 0
+        x: 752
+        y: 107
+        width: 105
+        height: 90
+      alignment: 1
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_21
       rect:
         serializedVersion: 2
-        x: 512
-        y: 261
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2
+        y: 6
+        width: 105
+        height: 90
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_22
       rect:
         serializedVersion: 2
-        x: 576
-        y: 261
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 127
+        y: 6
+        width: 105
+        height: 90
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_23
       rect:
         serializedVersion: 2
-        x: 640
-        y: 261
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 252
+        y: 6
+        width: 105
+        height: 90
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_24
       rect:
         serializedVersion: 2
-        x: 704
-        y: 261
-        width: 64
-        height: 64
-      alignment: 0
+        x: 377
+        y: 12
+        width: 105
+        height: 90
+      alignment: 1
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_25
       rect:
         serializedVersion: 2
-        x: 768
-        y: 261
-        width: 64
-        height: 64
-      alignment: 0
+        x: 502
+        y: 12
+        width: 105
+        height: 90
+      alignment: 1
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_26
       rect:
         serializedVersion: 2
-        x: 0
-        y: 197
-        width: 64
-        height: 64
-      alignment: 0
+        x: 627
+        y: 12
+        width: 105
+        height: 90
+      alignment: 1
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Screen_04_27
       rect:
         serializedVersion: 2
-        x: 64
-        y: 197
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_28
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 197
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_29
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 197
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_30
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 197
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_31
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 197
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_32
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 197
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_33
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 197
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_34
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 197
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_35
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 197
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_36
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 197
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_37
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 197
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_38
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 197
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_39
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 133
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_40
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 133
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_41
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 133
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_42
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 133
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_43
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 133
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_44
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 133
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_45
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 133
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_46
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 133
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_47
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 133
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_48
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 133
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_49
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 133
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_50
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 133
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_51
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 133
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_52
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 69
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_53
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 69
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_54
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 69
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_55
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 69
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_56
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 69
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_57
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 69
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_58
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 69
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_59
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 69
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_60
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 69
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_61
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 69
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_62
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 69
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_63
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 69
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_64
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 69
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_65
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 5
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_66
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 5
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_67
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 5
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_68
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 5
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_69
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 5
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_70
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 5
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_71
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 5
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_72
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 5
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_73
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 5
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_74
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 5
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_75
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 5
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_76
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 5
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Screen_04_77
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 5
-        width: 64
-        height: 64
-      alignment: 0
+        x: 752
+        y: 12
+        width: 105
+        height: 90
+      alignment: 1
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: Tile
