@@ -54,6 +54,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\Camera.cs" />
     <Compile Include="Assets\Script\GeraTile.cs" />
     <Compile Include="Assets\Script\Player.cs" />
   </ItemGroup>
