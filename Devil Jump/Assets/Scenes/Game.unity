@@ -113,6 +113,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6135660, guid: 0110d833f1d00744bae8921d18b26f65, type: 2}
+      propertyPath: m_Size.y
+      value: .839999974
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0110d833f1d00744bae8921d18b26f65, type: 2}
   m_RootGameObject: {fileID: 2009916589}
@@ -168,7 +172,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .669117689, g: .108239613, b: .108239613, a: .0196078438}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -273,7 +277,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .479999989, y: 1}
+  m_Size: {x: .479999989, y: .839999974}
   m_Center: {x: .0299999993, y: .0900000036}
 --- !u!114 &2009916591
 MonoBehaviour:
@@ -392,8 +396,9 @@ MonoBehaviour:
   - {fileID: 148884, guid: ac6a62b5429dc3246a0734589e82a82e, type: 2}
   - {fileID: 148884, guid: ac6a62b5429dc3246a0734589e82a82e, type: 2}
   - {fileID: 122142, guid: 975d911f57d93224dae0b0909db22ec8, type: 2}
-  - {fileID: 148884, guid: ac6a62b5429dc3246a0734589e82a82e, type: 2}
-  tileDistance: .699999988
+  - {fileID: 122142, guid: 907d3f2695e832641a6668b4f2ce61ee, type: 2}
+  - {fileID: 100000, guid: 798d202ad06859640b0db4c7474b4547, type: 2}
+  tileDistance: .639999986
 --- !u!4 &2046928334
 Transform:
   m_ObjectHideFlags: 0
