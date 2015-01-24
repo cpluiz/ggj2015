@@ -182,6 +182,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 190736, guid: 847dd445ce58c9d4f8a960206d1bf023, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490738, guid: 847dd445ce58c9d4f8a960206d1bf023, type: 2}
+      propertyPath: isGround.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 847dd445ce58c9d4f8a960206d1bf023, type: 2}
   m_RootGameObject: {fileID: 1757987509}
@@ -200,7 +208,7 @@ GameObject:
   - 114: {fileID: 793868521}
   - 61: {fileID: 793868520}
   - 58: {fileID: 793868519}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player3
   m_TagString: Player3
   m_Icon: {fileID: 0}
@@ -264,7 +272,7 @@ MonoBehaviour:
   groundCheck: {fileID: 821336009}
   isGround:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 768
   motion: {fileID: 0}
 --- !u!50 &793868522
 Rigidbody2D:
@@ -523,6 +531,14 @@ Prefab:
       propertyPath: m_TagString
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 177216, guid: 66d55b353aaa5e14bb2ef1196a6827d7, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 11477218, guid: 66d55b353aaa5e14bb2ef1196a6827d7, type: 2}
+      propertyPath: isGround.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66d55b353aaa5e14bb2ef1196a6827d7, type: 2}
   m_RootGameObject: {fileID: 2009916589}
@@ -706,6 +722,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11477218, guid: 66d55b353aaa5e14bb2ef1196a6827d7, type: 2}
+      propertyPath: isGround.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 177216, guid: 66d55b353aaa5e14bb2ef1196a6827d7, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66d55b353aaa5e14bb2ef1196a6827d7, type: 2}
   m_RootGameObject: {fileID: 793868517}
@@ -724,7 +748,7 @@ GameObject:
   - 114: {fileID: 1757987513}
   - 61: {fileID: 1757987512}
   - 58: {fileID: 1757987511}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player2
   m_TagString: Player2
   m_Icon: {fileID: 0}
@@ -788,7 +812,7 @@ MonoBehaviour:
   groundCheck: {fileID: 1923926429}
   isGround:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 768
   motion: {fileID: 0}
 --- !u!50 &1757987514
 Rigidbody2D:
@@ -797,7 +821,7 @@ Rigidbody2D:
     type: 2}
   m_PrefabInternal: {fileID: 677790471}
   m_GameObject: {fileID: 1757987509}
-  m_Mass: 3
+  m_Mass: 1.29999995
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
@@ -1078,7 +1102,7 @@ GameObject:
   - 114: {fileID: 2009916591}
   - 61: {fileID: 2009916590}
   - 58: {fileID: 2009916595}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player1
   m_TagString: Player1
   m_Icon: {fileID: 0}
@@ -1117,7 +1141,7 @@ MonoBehaviour:
   groundCheck: {fileID: 1975580421}
   isGround:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 768
   motion: {fileID: 0}
 --- !u!50 &2009916592
 Rigidbody2D:
