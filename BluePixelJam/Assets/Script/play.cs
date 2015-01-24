@@ -14,8 +14,8 @@ public class play : MonoBehaviour {
 	
 	}
 
-	public void goToLevel(int level){
-	
+	public void goToLevel(int level) {
+		if (holder.GetComponent<AlwaysAlive> ().faseMax >= lvl) {
 			preparaFases();
             GameObject.Find("GameConfig").GetComponent<GameConfig>().setFase(level);
             Application.LoadLevel("Game");
