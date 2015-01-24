@@ -866,6 +866,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11429258, guid: 0110d833f1d00744bae8921d18b26f65, type: 2}
+      propertyPath: maxSpeed
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0110d833f1d00744bae8921d18b26f65, type: 2}
   m_RootGameObject: {fileID: 1173165528}
@@ -1166,6 +1170,8 @@ MonoBehaviour:
   Pause: {fileID: 1601988847}
   Cutscene: {fileID: 1678563612}
   MainDisplay: {fileID: 1526143416}
+  audioManager: {fileID: 0}
+  config: {fileID: 0}
 --- !u!4 &885200425
 Transform:
   m_ObjectHideFlags: 0
@@ -1195,7 +1201,7 @@ GameObject:
   - 124: {fileID: 952672129}
   - 81: {fileID: 952672128}
   - 114: {fileID: 952672133}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1278,7 +1284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56e50b7bc4d950c44bd4e40e101d5974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dampTime: .00999999978
+  dampTime: .100000001
   target: {fileID: 0}
 --- !u!1 &1041056732
 GameObject:
@@ -1377,7 +1383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d5b6845a5cba642b09893e82732fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 2.5
+  maxSpeed: 3
   jumpForce: 570
   margin: 0
   facingRight: 0
@@ -2101,7 +2107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1830826884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2299,7 +2305,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6108f81df7c00524f98c08f093800f74, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 6108f81df7c00524f98c08f093800f74, type: 2}
+      propertyPath: testMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6108f81df7c00524f98c08f093800f74, type: 2}
