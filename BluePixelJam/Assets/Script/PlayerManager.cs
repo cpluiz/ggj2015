@@ -17,7 +17,9 @@ public class PlayerManager : MonoBehaviour {
 
     private void activatePlayer(int player){
         for (int i = 0; i < players.Length; i++) {
-            players[i].setActive(player == i);
+            if (players[i] != null) {
+                players[i].setActive(player == i);
+            }
         }
         GameObject.FindWithTag("MainCamera").GetComponent<Camera>().setTarget(players[player].transform);
         GameObject.FindWithTag("Display").GetComponent<Display>().setDisplay(player+1);
