@@ -12,7 +12,7 @@ public class Display : MonoBehaviour
     private bool runing;
     private int lvl;
     private Image characterDisplay;
-    private Canvas Pause;
+    private Canvas Pause,Cutscene;
 
     void Start() {
         timer = -1;
@@ -20,14 +20,33 @@ public class Display : MonoBehaviour
         characterDisplay = GameObject.FindGameObjectWithTag("CharacterDisplay").GetComponent<Image>();
         Timer = GameObject.FindGameObjectWithTag("TimerText").GetComponent<Text>();
         Pause = GameObject.FindGameObjectWithTag("Pause").GetComponent<Canvas>();
+        Cutscene = GameObject.FindGameObjectWithTag("Cutscene").GetComponent<Canvas>();
         Pause.gameObject.SetActive(false);
+        StartCutscene();
     }
 
-    public void StartDisplay(float maxTime, int level)
-    {
-        lvl = level;
+    private void StartCutscene() {
+        Cutscene.GetComponentInChildren<Image>().sprite = Resources.Load<Sprite>("cutscenes/cutscene" + lvl);
+        GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>().playSound("The Builder", true);
+        Cutscene.gameObject.SetActive(true);
+    }
+
+    public void SkipCutscene() {
+        Cutscene.gameObject.SetActive(false);
+        GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>().stopSound();
+        RunDisplay();
+    }
+
+    public void StartDisplay(float maxTime){
+        Time.timeScale = 0;
+        lvl = GameObject.FindWithTag("GameController").GetComponent<GameConfig>().getFase();
         timer = maxTime;
+        StartCutscene();
+    }
+
+    private void RunDisplay() {
         runing = true;
+        Time.timeScale = 1;
         GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>().playSound("Monkeys Spinning Monkeys", true);
     }
 
