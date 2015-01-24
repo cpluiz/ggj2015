@@ -22,7 +22,6 @@ public class Display : MonoBehaviour
 
     public void StartDisplay(float maxTime)
     {
-        DontDestroyOnLoad(gameObject);
         timer = maxTime;
         runing = true;
     }
