@@ -12,7 +12,7 @@ public class Display : MonoBehaviour
     private bool runing;
     private int lvl;
     private Image characterDisplay;
-    private Canvas Pause,Cutscene;
+    private Canvas Pause,Cutscene,MainDisplay;
 
     void Start() {
         timer = -1;
@@ -21,6 +21,7 @@ public class Display : MonoBehaviour
         Timer = GameObject.FindGameObjectWithTag("TimerText").GetComponent<Text>();
         Pause = GameObject.FindGameObjectWithTag("Pause").GetComponent<Canvas>();
         Cutscene = GameObject.FindGameObjectWithTag("Cutscene").GetComponent<Canvas>();
+        MainDisplay = GameObject.FindGameObjectWithTag("MainDisplay").GetComponent<Canvas>();
         Pause.gameObject.SetActive(false);
         StartCutscene();
     }
@@ -41,11 +42,13 @@ public class Display : MonoBehaviour
     public void StartDisplay(float maxTime){
         Time.timeScale = 0;
         lvl = GameObject.FindWithTag("GameController").GetComponent<GameConfig>().getFase();
+        MainDisplay.gameObject.SetActive(false);
         timer = maxTime;
         StartCutscene();
     }
 
     public void RunDisplay() {
+        MainDisplay.gameObject.SetActive(true);
         runing = true;
         GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>().playSound("Monkeys Spinning Monkeys", true);
     }

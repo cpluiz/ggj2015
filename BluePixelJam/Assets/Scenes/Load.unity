@@ -312,7 +312,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &736894345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,6 +353,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 741249426}
   - 95: {fileID: 741249427}
+  - 114: {fileID: 741249428}
   m_Layer: 5
   m_Name: GameObject
   m_TagString: Untagged
@@ -394,6 +395,21 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &741249428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 741249425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6937a9c163c4804584898ec003f4c43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playBt: {fileID: 1641356650}
+  levels: {fileID: 741249427}
+  holder: {fileID: 164024356}
+  lvl: 0
 --- !u!1 &780108973
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,7 +528,6 @@ GameObject:
   - 222: {fileID: 866346599}
   - 114: {fileID: 866346598}
   - 114: {fileID: 866346597}
-  - 114: {fileID: 866346600}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -577,7 +592,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 866346600}
+      - m_Target: {fileID: 741249428}
         m_MethodName: goToLevel
         m_Mode: 3
         m_Arguments:
@@ -618,21 +633,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 866346595}
---- !u!114 &866346600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 866346595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6937a9c163c4804584898ec003f4c43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playBt: {fileID: 1641356650}
-  levels: {fileID: 741249427}
-  holder: {fileID: 164024356}
-  lvl: 0
 --- !u!1 &873989300
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,6 +822,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6108f81df7c00524f98c08f093800f74, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6108f81df7c00524f98c08f093800f74, type: 2}
   m_RootGameObject: {fileID: 736894344}
@@ -838,7 +842,6 @@ GameObject:
   - 222: {fileID: 1638193813}
   - 114: {fileID: 1638193812}
   - 114: {fileID: 1638193811}
-  - 114: {fileID: 1638193814}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -903,7 +906,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1638193814}
+      - m_Target: {fileID: 741249428}
         m_MethodName: goToLevel
         m_Mode: 3
         m_Arguments:
@@ -944,21 +947,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1638193809}
---- !u!114 &1638193814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1638193809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6937a9c163c4804584898ec003f4c43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playBt: {fileID: 1641356650}
-  levels: {fileID: 741249427}
-  holder: {fileID: 164024356}
-  lvl: 2
 --- !u!1 &1641356644
 GameObject:
   m_ObjectHideFlags: 0
