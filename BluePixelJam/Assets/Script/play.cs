@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.IO;
 
 public class play : MonoBehaviour {
-
 	// Use this for initialization
+	public JSONObject Fases;
 	void Start () {
 	
 	}
@@ -14,16 +15,26 @@ public class play : MonoBehaviour {
 	}
 
 	public void goToLevel(int level){
-		Application.LoadLevel(level);
+		if (holder.GetComponent<AlwaysAlive> ().faseMax >= lvl) {
+			Application.LoadLevel (level);
+			preparaFases();
+		}
+
 	}
 
 	public Animator playBt;
 	public Animator levels;
+	public GameObject holder;
+	public int lvl =0;
 
 	public void goMenu(){
 		playBt.SetBool("Hidden", true);
 		levels.SetBool("Hidden", false);
 	}
+	
 
-
+	public void preparaFases(){
+		holder.GetComponent<AlwaysAlive>().fase = lvl;
+		holder.GetComponent<AlwaysAlive>().getFase();
+	}
 }
