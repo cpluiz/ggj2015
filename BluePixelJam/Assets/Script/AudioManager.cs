@@ -48,7 +48,7 @@ public class AudioManager : MonoBehaviour {
 		isMute = false;
 		audioSource.mute = false;
 		gameConfig.isMute = false;
-        AudioSprite.sprite = Resources.Load<Sprite>("Interface/mute");
+        if (Application.loadedLevelName == "Game") { AudioSprite.sprite = Resources.Load<Sprite>("Interface/mute"); }
 	}
 
 	public void Off()
@@ -56,7 +56,7 @@ public class AudioManager : MonoBehaviour {
 		isMute = true;
 		audioSource.mute = true;
 		gameConfig.isMute = true;
-        AudioSprite.sprite = Resources.Load<Sprite>("Interface/desmute");
+        if (Application.loadedLevelName == "Game") { AudioSprite.sprite = Resources.Load<Sprite>("Interface/desmute"); }
 	}
 
 	public float soundLength(){
