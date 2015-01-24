@@ -8,9 +8,11 @@ public class PlayerManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         players = new Player[3];
-        players[0] = GameObject.FindWithTag("Player1").GetComponent<Player>();
-        //players[1] = GameObject.FindWithTag("Player2").GetComponent<Player>();
-        //players[2] = GameObject.FindWithTag("Player3").GetComponent<Player>();
+        //for (int i = 0; i < players.Length; i++) {
+        for (int i = 0; i < 1; i++) {
+            players[i] = GameObject.FindWithTag("Player"+(i+1)).GetComponent<Player>();
+            players[i].transform.parent = gameObject.transform;
+        }
         GameObject.FindWithTag("MainCamera").GetComponent<Camera>().setTarget(players[0].transform);
         activatePlayer(0);
 	}
