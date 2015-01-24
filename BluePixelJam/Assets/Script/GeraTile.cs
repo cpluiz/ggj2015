@@ -7,6 +7,8 @@ public class GeraTile : MonoBehaviour {
 	public GameObject[] tiles = new GameObject[7];
 	public float tileDistance = 0.7f;
 
+	public float timer;
+
 	public GameObject holder;
 
 	int xLength;
@@ -56,6 +58,6 @@ public class GeraTile : MonoBehaviour {
 				}
 			}
 		}
-        GameObject.FindWithTag("Display").GetComponent<Display>().StartDisplay(30f);
+        GameObject.FindWithTag("Display").GetComponent<Display>().StartDisplay(timer);
 	}
 }
