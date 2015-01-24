@@ -43,7 +43,7 @@ public class Display : MonoBehaviour
 
     public void StartDisplay(float maxTime){
         Time.timeScale = 0;
-        lvl = GameObject.FindWithTag("GameController").GetComponent<GameConfig>().getFase();
+        lvl = GameObject.Find("GameConfig").GetComponent<GameConfig>().getFase();
         MainDisplay.gameObject.SetActive(false);
         timer = maxTime;
         StartCutscene();

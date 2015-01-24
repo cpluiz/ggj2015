@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour {
 	public bool playing;
 	private bool locutor, cont;
 	private AudioSource audioSource;
-	private GameConfig gameConfig;
+	public GameConfig gameConfig;
 	private AudioClip som, old;
 	private float continueTime;
 
