@@ -32,6 +32,12 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+    void OnTriggerEnter2D(Collider2D tile) {
+        if (tile.tag == "Portal" && active) {
+            Application.LoadLevel("Load");
+        }
+    }
+
     void FixedUpdate() {
         if (active) {
             grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, isGround);

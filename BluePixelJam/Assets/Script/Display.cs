@@ -11,11 +11,16 @@ public class Display : MonoBehaviour
     private float timer;
     private bool runing;
     private int lvl;
+    private Image characterDisplay;
 
     public void StartDisplay(float maxTime)
     {
         timer = maxTime;
         runing = true;
+    }
+
+    public void setDisplay(int character) {
+        characterDisplay.sprite = Resources.Load<Sprite>("hud" + character);
     }
 
     void Update() {

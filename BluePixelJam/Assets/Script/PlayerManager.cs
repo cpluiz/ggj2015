@@ -8,18 +8,23 @@ public class PlayerManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         players = new Player[3];
-        players[0] = GameObject.FindWithTag("Player1").GetComponent<Player>();
-        players[1] = GameObject.FindWithTag("Player2").GetComponent<Player>();
-        players[2] = GameObject.FindWithTag("Player3").GetComponent<Player>();
+        //for (int i = 0; i < players.Length; i++) {
+        for (int i = 0; i < 1; i++) {
+            players[i] = GameObject.FindWithTag("Player"+(i+1)).GetComponent<Player>();
+            players[i].transform.parent = gameObject.transform;
+        }
         GameObject.FindWithTag("MainCamera").GetComponent<Camera>().setTarget(players[0].transform);
-        players[0].setActive(true);
+        activatePlayer(0);
 	}
 
     private void activatePlayer(int player){
         for (int i = 0; i < players.Length; i++) {
-            players[i].setActive(player == i);
+            if (players[i] != null) {
+                players[i].setActive(player == i);
+            }
         }
         GameObject.FindWithTag("MainCamera").GetComponent<Camera>().setTarget(players[player].transform);
+        GameObject.FindWithTag("Display").GetComponent<Display>().setDisplay(player+1);
     }
 	
 	// Update is called once per frame

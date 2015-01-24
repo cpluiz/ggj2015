@@ -16,4 +16,14 @@ public class play : MonoBehaviour {
 	public void goToLevel(int level){
 		Application.LoadLevel(level);
 	}
+
+	public Animator playBt;
+	public Animator levels;
+
+	public void goMenu(){
+		playBt.SetBool("Hidden", true);
+		levels.SetBool("Hidden", false);
+	}
+
+
 }
