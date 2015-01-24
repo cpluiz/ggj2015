@@ -10,7 +10,9 @@ public class PlayerManager : MonoBehaviour {
         players = new Player[3];
         //for (int i = 0; i < players.Length; i++) {
         for (int i = 0; i < 1; i++) {
-            players[i] = GameObject.FindWithTag("Player"+(i+1)).GetComponent<Player>();
+            while (players[i] == null) {
+                players[i] = GameObject.FindWithTag("Player" + (i + 1)).GetComponent<Player>();
+            }
             players[i].transform.parent = gameObject.transform;
         }
         GameObject.FindWithTag("MainCamera").GetComponent<Camera>().setTarget(players[0].transform);
@@ -18,10 +20,9 @@ public class PlayerManager : MonoBehaviour {
 	}
 
     private void activatePlayer(int player){
-        for (int i = 0; i < players.Length; i++) {
-            if (players[i] != null) {
-                players[i].setActive(player == i);
-            }
+        //for (int i = 0; i < players.Length; i++) {
+        for (int i = 0; i < 1; i++) {
+               players[i].setActive(player == i);
         }
         GameObject.FindWithTag("MainCamera").GetComponent<Camera>().setTarget(players[player].transform);
         GameObject.FindWithTag("Display").GetComponent<Display>().setDisplay(player+1);

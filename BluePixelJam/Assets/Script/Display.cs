@@ -13,6 +13,13 @@ public class Display : MonoBehaviour
     private int lvl;
     private Image characterDisplay;
 
+    void Start() {
+        timer = -1;
+        runing = false;
+        characterDisplay = GameObject.FindGameObjectWithTag("CharacterDisplay").GetComponent<Image>();
+        Timer = GameObject.FindGameObjectWithTag("TimerText").GetComponent<Text>();
+    }
+
     public void StartDisplay(float maxTime)
     {
         timer = maxTime;
@@ -34,8 +41,8 @@ public class Display : MonoBehaviour
             timer = timer - Time.deltaTime;
             Timer.text = Math.Round(timer, 0).ToString();
         }
-        if (timer <= 0) {
-            Application.LoadLevel("Lose");
+        if (runing && timer <= 0) {
+            Application.LoadLevel("Load");
         }
     }
     public void stopTimer()
