@@ -203,7 +203,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6108f81df7c00524f98c08f093800f74, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: GameController
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6108f81df7c00524f98c08f093800f74, type: 2}
@@ -221,7 +221,7 @@ GameObject:
   - 114: {fileID: 1169500764}
   m_Layer: 0
   m_Name: GameConfig
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
