@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour {
 
 	//audio.clip = AudioClip for Pause\Play function.
 	//audio.PlayOneShot(AudioClip) for multiple sounds.
 
-	public SpriteRenderer OnSprite;
-	public SpriteRenderer OffSprite;
+    public Image AudioSprite;
 	public bool isMute;
 	public bool playing;
 	private bool locutor, cont;
@@ -35,13 +35,20 @@ public class AudioManager : MonoBehaviour {
 		}
 	}
 
+    public void toggleAudio() {
+        if (isMute) {
+            On();
+        } else {
+            Off();
+        }
+    }
+
 	public void On()
 	{
 		isMute = false;
 		audioSource.mute = false;
 		gameConfig.isMute = false;
-		//OnSprite.renderer.material.color = new Color(1f,1f,1f,1f);
-		//OffSprite.renderer.material.color = new Color(1f,1f,1f,0.5f);
+        AudioSprite.sprite = Resources.Load<Sprite>("Interface/mute");
 	}
 
 	public void Off()
@@ -49,8 +56,7 @@ public class AudioManager : MonoBehaviour {
 		isMute = true;
 		audioSource.mute = true;
 		gameConfig.isMute = true;
-		//OnSprite.renderer.material.color = new Color(1f,1f,1f,0.5f);
-		//OffSprite.renderer.material.color = new Color(1f,1f,1f,1f);
+        AudioSprite.sprite = Resources.Load<Sprite>("Interface/desmute");
 	}
 
 	public float soundLength(){
