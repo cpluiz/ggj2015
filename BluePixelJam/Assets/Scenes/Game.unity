@@ -1131,6 +1131,8 @@ MonoBehaviour:
   Pause: {fileID: 1601988847}
   Cutscene: {fileID: 1678563612}
   MainDisplay: {fileID: 1526143416}
+  audioManager: {fileID: 0}
+  config: {fileID: 0}
 --- !u!4 &885200425
 Transform:
   m_ObjectHideFlags: 0
@@ -1160,7 +1162,7 @@ GameObject:
   - 124: {fileID: 952672129}
   - 81: {fileID: 952672128}
   - 114: {fileID: 952672133}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1245,6 +1247,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dampTime: .300000012
   target: {fileID: 0}
+  rightBound: 0
+  leftBound: 0
+  topBound: 0
+  bottomBound: 0
 --- !u!1 &1041056732
 GameObject:
   m_ObjectHideFlags: 0

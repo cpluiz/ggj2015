@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour {
 	private float continueTime;
 
 	void Awake() {
-		gameConfig = GameObject.Find("GameConfig").GetComponent<GameConfig>();
+		gameConfig = GameObject.FindWithTag("GameController").GetComponent<GameConfig>();
 		audioSource = gameObject.GetComponent<AudioSource>();
 		locutor = false;
 	}
