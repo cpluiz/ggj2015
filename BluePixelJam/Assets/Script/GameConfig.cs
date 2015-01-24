@@ -2,10 +2,6 @@
 using System.Collections;
 
 public class GameConfig : MonoBehaviour {
-	[System.Serializable]
-	public struct levelStruct{
-		public bool unlocked;
-	}
 
 	//Store everything you need use between scenes.
 	public bool isMute = false;
@@ -14,6 +10,8 @@ public class GameConfig : MonoBehaviour {
 	public Texture2D cursorTexture;
 	public CursorMode cursorMode = CursorMode.Auto;
 	public Vector2 hotSpot = Vector2.zero;
+    [SerializeField]
+    private int faseAtual = 0;
 	
 	void Awake()
 	{
@@ -26,5 +24,12 @@ public class GameConfig : MonoBehaviour {
 	{
 		//Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
 	}
+
+    public void setFase(int fase) {
+        faseAtual = fase;
+    }
+    public int getFase() {
+        return faseAtual;
+    }
 
 }

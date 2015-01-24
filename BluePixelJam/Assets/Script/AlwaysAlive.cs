@@ -12,10 +12,10 @@ public class AlwaysAlive : MonoBehaviour {
 	{
 		DontDestroyOnLoad(gameObject);
 		string stuff;
-		//stuff = File.ReadAllText(Application.dataPath +"/fase.txt");
+		stuff = File.ReadAllText(Application.dataPath +"/fase.txt");
 		
-		//JSONObject j = new JSONObject(stuff);
-		//fases = j;
+		JSONObject j = new JSONObject(stuff);
+		fases = j;
 
 	}
 
