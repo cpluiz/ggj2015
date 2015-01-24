@@ -1162,9 +1162,8 @@ GameObject:
   - 124: {fileID: 952672129}
   - 81: {fileID: 952672128}
   - 114: {fileID: 952672133}
-  - 61: {fileID: 952672135}
-  - 61: {fileID: 952672134}
   - 50: {fileID: 952672136}
+  - 61: {fileID: 952672137}
   m_Layer: 11
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1248,45 +1247,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56e50b7bc4d950c44bd4e40e101d5974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dampTime: .300000012
+  dampTime: .150000006
   target: {fileID: 0}
---- !u!61 &952672134
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 952672127}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: 1, y: 10}
-  m_Center: {x: 10.25, y: 0}
---- !u!61 &952672135
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 952672127}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: 1, y: 10}
-  m_Center: {x: -10.25, y: 0}
 --- !u!50 &952672136
 Rigidbody2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 952672127}
-  m_Mass: 9.99999975e-05
-  m_LinearDrag: 0
+  m_Mass: 5
+  m_LinearDrag: 110.199997
   m_AngularDrag: .0500000007
   m_GravityScale: 0
   m_FixedAngle: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!61 &952672137
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 952672127}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 26.7000008, y: 12.5}
+  m_Center: {x: 0, y: -1.25}
 --- !u!1 &989127119
 GameObject:
   m_ObjectHideFlags: 0
