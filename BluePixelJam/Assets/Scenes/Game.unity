@@ -1286,6 +1286,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dampTime: .100000001
   target: {fileID: 0}
+  rightBound: 0
+  leftBound: 0
+  topBound: 0
+  bottomBound: 0
 --- !u!1 &1041056732
 GameObject:
   m_ObjectHideFlags: 0
@@ -2251,6 +2255,9 @@ MonoBehaviour:
   - {fileID: 122142, guid: 3fdf244303e468c48a69dd2c91182a07, type: 2}
   - {fileID: 122142, guid: 991eef6724ce06c4a8ffb705aa54c273, type: 2}
   tileDistance: 2.55999994
+  mapBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   holder: {fileID: 0}
 --- !u!4 &2046928334
 Transform:
