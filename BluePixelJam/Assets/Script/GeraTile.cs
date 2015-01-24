@@ -7,6 +7,8 @@ public class GeraTile : MonoBehaviour {
 	public GameObject[] tiles = new GameObject[7];
 	public float tileDistance = 0.7f;
 
+	public GameObject holder;
+
 	int xLength;
 	int yLength;
 	//
@@ -50,6 +52,8 @@ public class GeraTile : MonoBehaviour {
 
 	public void GeraMap()
 	{
+
+
 		for (int i = xLength - 1, y = 0; i >= 0; i--, y++) 
 		{
 			for (int j = 0, x = 0; j < yLength; j++, x++) 
