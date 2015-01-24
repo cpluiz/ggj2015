@@ -34,7 +34,8 @@ public class Display : MonoBehaviour
     public void SkipCutscene() {
         Cutscene.gameObject.SetActive(false);
         GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>().stopSound();
-        RunDisplay();
+        Time.timeScale = 1;
+        Invoke("RunDisplay", 0.1f);
     }
 
     public void StartDisplay(float maxTime){
@@ -44,9 +45,8 @@ public class Display : MonoBehaviour
         StartCutscene();
     }
 
-    private void RunDisplay() {
+    public void RunDisplay() {
         runing = true;
-        Time.timeScale = 1;
         GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>().playSound("Monkeys Spinning Monkeys", true);
     }
 
