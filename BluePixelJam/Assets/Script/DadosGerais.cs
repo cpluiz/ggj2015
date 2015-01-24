@@ -9,11 +9,11 @@ public class MyData : MonoBehaviour
 	
 	void Start()
 	{
-		DontDestroyOnLoad(gameObject);
-		string stuff;
-		stuff = File.ReadAllText(Application.dataPath +"/fase.txt");
+		//DontDestroyOnLoad(gameObject);
+		//string stuff;
+		//stuff = File.ReadAllText(Application.dataPath +"/fase.txt");
 		
-		JSONObject j = new JSONObject(stuff);
-		Fases = j ["mapas"];
+		//JSONObject j = new JSONObject(stuff);
+		//Fases = j ["mapas"];
 	}
 }

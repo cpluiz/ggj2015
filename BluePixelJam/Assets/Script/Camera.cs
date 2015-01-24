@@ -13,7 +13,7 @@ public class Camera : MonoBehaviour
     }
 
     
-    void Update()
+    void FixedUpdate()
     {
         if (target)
         {
