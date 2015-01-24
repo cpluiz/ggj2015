@@ -19,10 +19,10 @@ public class AlwaysAlive : MonoBehaviour {
 
 	}
 
-	public object getFase(){
-		object fasi = fases["mapas"][fase]["tiles"];
-		Debug.Log (fasi);
-		return fasi;
+	//public object getFase(){
+		//object fasi = fases["mapas"][fase]["tiles"];
+		//Debug.Log (fasi);
+		//return fasi;
 
-	}
+	//}
 }
