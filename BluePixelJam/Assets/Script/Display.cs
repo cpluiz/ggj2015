@@ -12,18 +12,23 @@ public class Display : MonoBehaviour
     private bool runing;
     private int lvl;
     private Image characterDisplay;
+    private Canvas Pause;
 
     void Start() {
         timer = -1;
         runing = false;
         characterDisplay = GameObject.FindGameObjectWithTag("CharacterDisplay").GetComponent<Image>();
         Timer = GameObject.FindGameObjectWithTag("TimerText").GetComponent<Text>();
+        Pause = GameObject.FindGameObjectWithTag("Pause").GetComponent<Canvas>();
+        Pause.gameObject.SetActive(false);
     }
 
-    public void StartDisplay(float maxTime)
+    public void StartDisplay(float maxTime, int level)
     {
+        lvl = level;
         timer = maxTime;
         runing = true;
+        GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>().playSound("Monkeys Spinning Monkeys", true);
     }
 
     public void setDisplay(int character) {
@@ -31,7 +36,18 @@ public class Display : MonoBehaviour
     }
 
     void Update() {
-        if (runing) { runTimer(); }
+        if (Input.GetKeyDown(KeyCode.P)) {
+                if (Time.timeScale > 0) {
+                    Time.timeScale = 0;
+                    GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>().pauseSoud();
+                    Pause.gameObject.SetActive(true);
+                } else {
+                    Time.timeScale = 1;
+                    GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>().continueSound();
+                    Pause.gameObject.SetActive(false);
+                }
+            }
+        if (runing && Time.timeScale > 0) { runTimer(); }
     }
 
     public void runTimer()
