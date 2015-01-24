@@ -11,7 +11,7 @@ public class Display : MonoBehaviour
     private float timer;
     private bool runing;
     private int lvl;
-    private RawImage characterDisplay;
+    private Image characterDisplay;
 
     public void StartDisplay(float maxTime)
     {
@@ -20,7 +20,7 @@ public class Display : MonoBehaviour
     }
 
     public void setDisplay(int character) {
-        characterDisplay.texture = Resources.Load<Texture>("hud" + character);
+        characterDisplay.sprite = Resources.Load<Sprite>("hud" + character);
     }
 
     void Update() {
