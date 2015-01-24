@@ -61,6 +61,6 @@ public class GeraTile : MonoBehaviour {
 				}
 			}
 		}
-        GameObject.FindWithTag("Display").GetComponent<Display>().StartDisplay(30f);
+        GameObject.FindWithTag("Display").GetComponent<Display>().StartDisplay(30f,1);
 	}
 }

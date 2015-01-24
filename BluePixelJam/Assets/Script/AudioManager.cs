@@ -77,6 +77,7 @@ public class AudioManager : MonoBehaviour {
 		som = Resources.Load<AudioClip>("audio/"+s);
 		if(loc && !audio.isPlaying && !playing){
 			locutor = true;
+            audio.loop = true;
 			if(contTime>0){
 				audio.clip = old;
 			}else{
