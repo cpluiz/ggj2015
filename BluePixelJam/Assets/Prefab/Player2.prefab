@@ -13,7 +13,7 @@ GameObject:
   - 114: {fileID: 11490738}
   - 61: {fileID: 6190738}
   - 58: {fileID: 5890738}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player2
   m_TagString: Player2
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 490738}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
