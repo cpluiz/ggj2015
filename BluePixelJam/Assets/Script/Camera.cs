@@ -8,8 +8,8 @@ public class Camera : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     public Transform target;
 
-    void Start() {
-        target = GameObject.FindWithTag("Player").transform;
+    public void setTarget(Transform player) {
+        target = player;
     }
 
     

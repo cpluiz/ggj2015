@@ -3,8 +3,10 @@
 --- !u!78 &1
 TagManager:
   tags:
-  - Player
   - Display
+  - Player1
+  - Player2
+  - Player3
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
