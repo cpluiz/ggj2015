@@ -5,7 +5,7 @@ public class PlayerManager : MonoBehaviour {
 
     private Player[] players;
 
-    public void forceStart() {
+    public void OnSceneLoad() {
         Start();
     }
 	// Use this for initialization
