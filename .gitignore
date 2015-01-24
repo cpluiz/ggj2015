@@ -11,13 +11,9 @@ ExportedObj/
 obj/
 *.svd
 *.userprefs
-Devil Jump/*.csproj
-Smile Rush/*.csproj
 *.csproj
 *.pidb
 *.suo
-Devil Jump/*.sln
-Smile Rush/*.sln
 *.sln
 *.user
 *.unityproj
