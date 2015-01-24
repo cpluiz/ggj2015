@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour {
 	//audio.clip = AudioClip for Pause\Play function.
 	//audio.PlayOneShot(AudioClip) for multiple sounds.
 
-    public Image AudioSprite;
+	public Image AudioSprite;
 	public bool isMute;
 	public bool playing;
 	private bool locutor, cont;
@@ -17,67 +17,82 @@ public class AudioManager : MonoBehaviour {
 	private float continueTime;
 
 	void Awake() {
-		gameConfig = GameObject.Find("GameConfig").GetComponent<GameConfig>();
+		if (GameObject.Find("GameConfig") != null) {
+			gameConfig = GameObject.Find("GameConfig").GetComponent<GameConfig> ();
+		}
 		audioSource = gameObject.GetComponent<AudioSource>();
 		locutor = false;
 	}
 
-	void Start()
-	{
-		isMute = gameConfig.isMute;
-		if(isMute)
-		{
+	void Start() {
+		isMute = gameConfig != null ? gameConfig.isMute : false;
+
+		if(isMute) {
 			Off();
-		}
-		else
-		{
+		} else {
 			On();
 		}
 	}
 
-    public void toggleAudio() {
-        if (isMute) {
-            On();
-        } else {
-            Off();
-        }
-    }
+	public void toggleAudio() {
+		if (isMute) {
+			On();
+		} else {
+			Off();
+		}
+	}
 
 	public void On()
 	{
 		isMute = false;
 		audioSource.mute = false;
-		gameConfig.isMute = false;
-        if (Application.loadedLevelName == "Game") { AudioSprite.sprite = Resources.Load<Sprite>("Interface/mute"); }
+
+		if (gameConfig != null) {
+			gameConfig.isMute = false;
+		}
+
+        if (Application.loadedLevelName == "Game") {
+			AudioSprite.sprite = Resources.Load<Sprite>("Interface/mute");
+		}
 	}
 
 	public void Off()
 	{
 		isMute = true;
 		audioSource.mute = true;
-		gameConfig.isMute = true;
-        if (Application.loadedLevelName == "Game") { AudioSprite.sprite = Resources.Load<Sprite>("Interface/desmute"); }
+
+		if (gameConfig != null) {
+			gameConfig.isMute = true;
+		}
+
+    	if (Application.loadedLevelName == "Game") {
+			AudioSprite.sprite = Resources.Load<Sprite>("Interface/desmute");
+		}
 	}
 
 	public float soundLength(){
 		float tempo = 0;
+
 		if(som != null){
 			tempo = som.length;
 		}
+
 		return tempo;
 	}
-	
 
 	public void playSound(string s){
 		playSound(s, false, 0);
 	}
+
 	public void playSound(string s, bool loc){
 		playSound(s, loc, 0);
 	}
+
 	public void playOneShot(string s){
 		som = Resources.Load<AudioClip>("audio/"+s);
 		audio.PlayOneShot(som);
 	}
+
 	public void playSound(string s, bool loc, float contTime)
 	{
 		som = Resources.Load<AudioClip>("audio/"+s);
@@ -102,6 +117,7 @@ public class AudioManager : MonoBehaviour {
 			}
 		}
 	}
+
 	public void pauseSoud(){
 		if((audio.isPlaying || playing) && locutor){
 			cont = locutor;
@@ -117,13 +133,16 @@ public class AudioManager : MonoBehaviour {
 		}
 		audio.Pause();
 	}
+
 	public float getTime(){
 		return audio.time;
 	}
+
 	public void stopSound(){
 		audio.Stop();
 		if(Time.timeScale>0){playing = false;}
 	}
+
 	public void continueSound(){
 		if(continueTime>0){
 			playSound("",cont,continueTime);
@@ -131,9 +150,11 @@ public class AudioManager : MonoBehaviour {
 		continueTime = 0;
 		cont = false;
 	}
+
 	private void FixedUpdate(){
 		playing = audio.isPlaying;
 	}
+
 	public AudioClip getSound(){
 		return som;
 	}
