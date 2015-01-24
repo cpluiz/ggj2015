@@ -321,7 +321,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 821336009}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -967,7 +967,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1923926429}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -994,7 +994,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1975580421}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1240,6 +1240,8 @@ MonoBehaviour:
   - {fileID: 122142, guid: 975d911f57d93224dae0b0909db22ec8, type: 2}
   - {fileID: 122142, guid: 907d3f2695e832641a6668b4f2ce61ee, type: 2}
   - {fileID: 100000, guid: 798d202ad06859640b0db4c7474b4547, type: 2}
+  - {fileID: 122142, guid: 3fdf244303e468c48a69dd2c91182a07, type: 2}
+  - {fileID: 122142, guid: 991eef6724ce06c4a8ffb705aa54c273, type: 2}
   tileDistance: .639999986
 --- !u!4 &2046928334
 Transform:
