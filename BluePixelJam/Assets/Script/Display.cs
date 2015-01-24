@@ -35,7 +35,7 @@ public class Display : MonoBehaviour
             Timer.text = Math.Round(timer, 0).ToString();
         }
         if (timer <= 0) {
-            Application.LoadLevel("Load");
+            Application.LoadLevel("Lose");
         }
     }
     public void stopTimer()

@@ -5,13 +5,13 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Button
+  m_Name: Canvas
   serializedVersion: 2
   m_AnimatorParameters: []
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: Base Layer
-    m_StateMachine: {fileID: 110794432}
+    m_StateMachine: {fileID: 110743306}
     m_Mask: {fileID: 0}
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
@@ -20,61 +20,47 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &110268568
+--- !u!1102 &110243306
 State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Vanish 0
+  m_Name: Play Vanish
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 569011e9abf40ed4b9984d708644e00d, type: 2}
-  m_ParentStateMachine: {fileID: 110794432}
-  m_Position: {x: 17, y: 165, z: 0}
+  - {fileID: 0}
+  m_ParentStateMachine: {fileID: 110743306}
+  m_Position: {x: 84, y: 108, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
---- !u!1102 &110278178
+--- !u!1102 &110248080
 State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Vanish
+  m_Name: menu
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 569011e9abf40ed4b9984d708644e00d, type: 2}
-  m_ParentStateMachine: {fileID: 110794432}
-  m_Position: {x: 128, y: 163, z: 0}
+  - {fileID: 0}
+  m_ParentStateMachine: {fileID: 110743306}
+  m_Position: {x: 119, y: 173, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
---- !u!1102 &110294432
-State:
-  m_ObjectHideFlags: 3
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: retry
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Motions:
-  - {fileID: 7400000, guid: a0b099fae09435146a597e6a1cf8a264, type: 2}
-  m_ParentStateMachine: {fileID: 110794432}
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_Mirror: 0
-  m_Tag: 
---- !u!1107 &110794432
+--- !u!1107 &110743306
 StateMachine:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Base Layer
-  m_DefaultState: {fileID: 0}
+  m_DefaultState: {fileID: 110243306}
   m_States:
-  - {fileID: 110278178}
+  - {fileID: 110243306}
+  - {fileID: 110248080}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions: {}
