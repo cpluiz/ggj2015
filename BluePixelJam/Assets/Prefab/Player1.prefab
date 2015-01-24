@@ -11,8 +11,9 @@ GameObject:
   - 212: {fileID: 21229258}
   - 50: {fileID: 5029258}
   - 114: {fileID: 11429258}
-  - 61: {fileID: 6135660}
   - 58: {fileID: 5835660}
+  - 61: {fileID: 6159298}
+  - 58: {fileID: 5835244}
   m_Layer: 9
   m_Name: Player1
   m_TagString: Player1
@@ -42,8 +43,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.88000011, y: 2.51999998, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 435660}
   m_Father: {fileID: 0}
@@ -55,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 135660}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.5, z: 0}
+  m_LocalPosition: {x: 0, y: -1.10000002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 429258}
@@ -75,7 +76,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!58 &5835660
+--- !u!58 &5835244
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -84,9 +85,20 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Radius: .239999995
-  m_Center: {x: .0299999993, y: -.379999995}
---- !u!61 &6135660
+  m_Radius: .589999974
+  m_Center: {x: -.100000001, y: .540000021}
+--- !u!58 &5835660
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129258}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: ab0888c61d38df94c899c2e1deafe256, type: 2}
+  m_IsTrigger: 0
+  m_Radius: .400000006
+  m_Center: {x: -.0700000003, y: -.75999999}
+--- !u!61 &6159298
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -95,8 +107,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .479999989, y: 1}
-  m_Center: {x: .0299999993, y: .0900000036}
+  m_Size: {x: .77782023, y: .741179466}
+  m_Center: {x: -.0689101219, y: -.264410257}
 --- !u!114 &11429258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -108,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d5b6845a5cba642b09893e82732fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 3
+  maxSpeed: 2.5
   jumpForce: 570
   margin: 0
   facingRight: 0
@@ -138,7 +150,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: da20d5ad384a27d4f9f9db01aac0dcc8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d36b064d75c5c6e4292f1f993a276541, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

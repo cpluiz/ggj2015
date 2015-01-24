@@ -11,7 +11,7 @@ public class Display : MonoBehaviour
     private float timer;
     private bool runing;
     private int lvl;
-    private Image characterDisplay;
+    private Image characterDisplay, PauseButton;
     private Canvas Pause,Cutscene,MainDisplay;
 
     void Start() {
@@ -22,7 +22,9 @@ public class Display : MonoBehaviour
         Pause = GameObject.FindGameObjectWithTag("Pause").GetComponent<Canvas>();
         Cutscene = GameObject.FindGameObjectWithTag("Cutscene").GetComponent<Canvas>();
         MainDisplay = GameObject.FindGameObjectWithTag("MainDisplay").GetComponent<Canvas>();
+        PauseButton = GameObject.Find("PauseButton").GetComponent<Image>();
         Pause.gameObject.SetActive(false);
+        PauseButton.gameObject.SetActive(false);
         StartCutscene();
     }
 
@@ -45,6 +47,7 @@ public class Display : MonoBehaviour
         MainDisplay.gameObject.SetActive(false);
         timer = maxTime;
         StartCutscene();
+        PauseButton.gameObject.SetActive(true);
     }
 
     public void RunDisplay() {
@@ -57,17 +60,23 @@ public class Display : MonoBehaviour
         characterDisplay.sprite = Resources.Load<Sprite>("hud" + character);
     }
 
+    public void pauseFunction() {
+        if (Time.timeScale > 0) {
+            GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>().pauseSoud();
+            PauseButton.sprite = Resources.Load<Sprite>("Interface/play");
+            Pause.gameObject.SetActive(true);
+            Time.timeScale = 0;
+        } else {
+            Time.timeScale = 1;
+            GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>().continueSound();
+            PauseButton.sprite = Resources.Load<Sprite>("Interface/pause");
+            Pause.gameObject.SetActive(false);
+        }
+    }
+
     void Update() {
-        if (Input.GetKeyDown(KeyCode.P)) {
-                if (Time.timeScale > 0) {
-                    Time.timeScale = 0;
-                    GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>().pauseSoud();
-                    Pause.gameObject.SetActive(true);
-                } else {
-                    Time.timeScale = 1;
-                    GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>().continueSound();
-                    Pause.gameObject.SetActive(false);
-                }
+        if (Input.GetKeyDown(KeyCode.P) && runing) {
+                pauseFunction();
             }
         if (runing && Time.timeScale > 0) { runTimer(); }
     }
