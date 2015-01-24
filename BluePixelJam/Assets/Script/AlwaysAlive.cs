@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using System;
 
 public class FaseObject {
@@ -15,18 +16,34 @@ public class AlwaysAlive : MonoBehaviour {
 	public int faseMax = 0;
 	public JSONObject fases;
 	public FaseObject[] fasesObj;
-	
-	void Start()
-	{
-		DontDestroyOnLoad(gameObject);
-		string stuff = "";
-        string[] stuffs = File.ReadAllLines(Application.dataPath + "/fase.txt");
-        //stuff = File.ReadAllText(Application.dataPath +"/fase.txt");
-        for (int i = 0; i < stuffs.Length; i++) {
-            stuff += stuffs[i];
-        }
+    public string patch;
 
-		
+    void Awake() {
+        DontDestroyOnLoad(gameObject);
+        #if UNITY_WEBPLAYER
+                patch = Application.dataPath.ToString() + "/fase.txt";
+        #endif
+        #if (UNITY_EDITOR || UNITY_EDITOR_WIN)
+                patch = "file://" + Application.dataPath.ToString() + "/fase.txt";
+        #endif
+        Start();
+    }
+
+    IEnumerator Start()
+	{
+        WWW www = new WWW(patch);
+        yield return www;
+        if (www.error == null)
+        {
+            LoadTiles(www.text);
+        }
+        else
+        {
+            Debug.Log("Error: " + www.error);
+        }
+        
+    }
+    private void LoadTiles(string stuff){
 		JSONObject j = new JSONObject(stuff);
 		fases = j;
 
