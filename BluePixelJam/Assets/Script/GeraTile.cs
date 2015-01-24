@@ -58,10 +58,7 @@ public class GeraTile : MonoBehaviour {
 					GameObject tile = Instantiate(tiles[tileMap[i,j]],new Vector2(x * tileDistance,y * tileDistance), transform.rotation) as GameObject;
 					tile.transform.parent = transform;
 
-					if(tileMap[i,j] != 2)
-					{
-                    	mapBounds.Encapsulate(tile.transform.GetComponent<SpriteRenderer>().bounds);
-					}
+                    mapBounds.Encapsulate(tile.transform.GetComponent<SpriteRenderer>().bounds);
 				}
 			}
 		}
