@@ -19,8 +19,13 @@ public class AlwaysAlive : MonoBehaviour {
 	void Start()
 	{
 		DontDestroyOnLoad(gameObject);
-		string stuff;
-		stuff = File.ReadAllText(Application.dataPath +"/fase.txt");
+		string stuff = "";
+        string[] stuffs = File.ReadAllLines(Application.dataPath + "/fase.txt");
+        //stuff = File.ReadAllText(Application.dataPath +"/fase.txt");
+        for (int i = 0; i < stuffs.Length; i++) {
+            stuff += stuffs[i];
+        }
+
 		
 		JSONObject j = new JSONObject(stuff);
 		fases = j;
