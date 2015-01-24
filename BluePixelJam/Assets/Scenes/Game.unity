@@ -1306,7 +1306,7 @@ Transform:
   m_PrefabInternal: {fileID: 1800910208}
   m_GameObject: {fileID: 1173165528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.88000011, y: 2.51999998, z: 0}
+  m_LocalPosition: {x: 2.88000011, y: 5.09000015, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1041056733}
@@ -1977,7 +1977,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 429258, guid: 0110d833f1d00744bae8921d18b26f65, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.51999998
+      value: 5.09000015
       objectReference: {fileID: 0}
     - target: {fileID: 429258, guid: 0110d833f1d00744bae8921d18b26f65, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2236,6 +2236,9 @@ MonoBehaviour:
   - {fileID: 122142, guid: 3fdf244303e468c48a69dd2c91182a07, type: 2}
   - {fileID: 122142, guid: 991eef6724ce06c4a8ffb705aa54c273, type: 2}
   tileDistance: 2.55999994
+  mapBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   timer: 60
   holder: {fileID: 0}
 --- !u!4 &2046928334
