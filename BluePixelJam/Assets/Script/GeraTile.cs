@@ -66,5 +66,6 @@ public class GeraTile : MonoBehaviour {
 			}
 		}
         GameObject.FindWithTag("Display").GetComponent<Display>().StartDisplay(timer);
+        GameObject.FindWithTag("MainCamera").GetComponent<CameraScript>().setBounds(mapBounds);
 	}
 }
