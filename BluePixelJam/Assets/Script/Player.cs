@@ -17,6 +17,7 @@ public class Player : MonoBehaviour {
     private bool active;
     private AudioManager audioManager;
     private Collider2D[] tile;
+    private bool empurrando;
 
 	private Animator animRef;
 
@@ -53,42 +54,47 @@ public class Player : MonoBehaviour {
         }
     }
 
-    void OnCollisionEnter2D(Collision2D tile) {
-        if (gameObject.rigidbody2D.mass > 1 && tile.gameObject.tag == "Empurravel" && grounded) {
+    void OnTriggerEnter2D(Collision2D tile) {
+        if (gameObject.tag == "Player2" && tile.gameObject.tag == "Empurravel" && grounded){
             if (tile.gameObject.rigidbody2D == null) {
                 tile.gameObject.AddComponent<Rigidbody2D>();
                 tile.gameObject.rigidbody2D.fixedAngle = true;
                 animRef.SetBool("collidewall", true);
                 if (animRef.GetFloat("speed") > 0) { audioManager.playOneShot("arrastar"); }
             }
-        }else if(tile.gameObject.rigidbody2D && gameObject.rigidbody2D.mass<=1){
+        }else if (tile.gameObject.rigidbody2D && gameObject.tag != "Player2")
+        {
             animRef.SetBool("collidewall", false);
             Destroy(tile.gameObject.rigidbody2D);
         }
     }
 
-    void OnCollisionStay2D(Collision2D tile) {
-        if (gameObject.rigidbody2D.mass > 1 && tile.gameObject.tag == "Empurravel" && !grounded) {
-            animRef.SetBool("collidewall", (true && grounded));
+    void OnTriggerStay2D(Collision2D tile) {
+        if (gameObject.tag == "Player2" && tile.gameObject.tag != "Empurravel" && empurrando){
+            empurrando = false;
+        }else if (gameObject.tag == "Player2" && tile.gameObject.tag == "Empurravel" && !grounded) {
+            empurrando = (true && grounded);
+            animRef.SetBool("collidewall", empurrando);
             animRef.SetBool("jump", false);
             Destroy(tile.gameObject.rigidbody2D);
         }
+        if (gameObject.tag == "Player2") { animRef.SetBool("collidewall", empurrando); }
     }
 
-    void OnCollisionExit2D(Collision2D tile) {
-        if (gameObject.rigidbody2D.mass > 1){
+    void OnTriggerExit2D(Collision2D tile) {
+        if (gameObject.tag == "Player2" && empurrando){
             animRef.SetBool("collidewall", false);
         }
     }
 
     void FixedUpdate() {
         if (active) {
-            if (gameObject.rigidbody2D.mass > 1) {
+            if (gameObject.tag == "Player2") {
                 Physics2D.OverlapCircleNonAlloc(new Vector2(groundCheck.position.x, groundCheck.position.y), groundRadius, tile);
-                if (animRef.GetBool("collidewall") && tile != null) {
+                if (empurrando && tile != null) {
                     grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, isGround);
                     for (int i = 0; i < tile.Length; i++) {
-                        if (tile[i].tag == "Empurravel") { grounded = false; }
+                        if (tile[i].tag == "Empurravel") { grounded = false; empurrando = false; }
                     }
                 }else{
                     grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, isGround);
