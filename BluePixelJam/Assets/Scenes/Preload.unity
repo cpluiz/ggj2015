@@ -199,7 +199,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 6108f81df7c00524f98c08f093800f74, type: 2}
       propertyPath: isMute
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6108f81df7c00524f98c08f093800f74, type: 2}
@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a31bfaf0cae0ef94e88e0ed702372630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMute: 1
+  isMute: 0
   testMode: 0
   unlockAll: 0
   cursorTexture: {fileID: 2800000, guid: 8551aa550a95e4744bc6fe52c9247ea2, type: 3}
