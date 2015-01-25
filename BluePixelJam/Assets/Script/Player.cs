@@ -15,24 +15,27 @@ public class Player : MonoBehaviour {
     [SerializeField]
     private Animator motion;
     private bool active;
+    private AudioManager audioManager;
 
 	private Animator animRef;
 
     public void setActive(bool a) {
         active = a;
+        gameObject.SetActive(a);
     }
 
 	void Awake(){
-			
 		animRef = gameObject.GetComponent<Animator> ();
         active = false;
 		facingRight = true;
 		groundRadius = 0.2f;
+        audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
 	}
 	
 	void Update(){
         if (grounded && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && Time.timeScale > 0 && active){
 			rigidbody2D.AddForce(new Vector2(0, jumpForce));
+            audioManager.playOneShot("jump");
 		}
 	}
 
@@ -46,6 +49,24 @@ public class Player : MonoBehaviour {
             }else{
                 Application.LoadLevel("Load");
             }
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D tile) {
+        if (gameObject.rigidbody2D.mass > 1 && tile.gameObject.tag == "Empurravel") {
+            if (tile.gameObject.rigidbody2D == null) {
+                tile.gameObject.AddComponent<Rigidbody2D>(); Debug.Log("Entrou na condição");
+                animRef.SetBool("collidewall", true);
+                if (animRef.GetFloat("speed") > 0) { audioManager.playOneShot("arrastar"); }
+            }
+        }else if(tile.gameObject.rigidbody2D && gameObject.rigidbody2D.mass<=1){
+            Destroy(tile.gameObject.rigidbody2D);
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D tile) {
+        if (tile.gameObject.tag == "Empurravel") {
+            if (tile.gameObject.rigidbody2D != null) { Destroy(tile.gameObject.rigidbody2D); animRef.SetBool("collidewall", false); }
         }
     }
 

@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerManager : MonoBehaviour {
 
     private Player[] players;
+    private int playerActive;
 
     public void OnSceneLoad() {
         Start();
@@ -11,22 +12,22 @@ public class PlayerManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         players = new Player[3];
-        //for (int i = 0; i < players.Length; i++) {
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < players.Length; i++) {
             while (players[i] == null) {
                 players[i] = GameObject.FindWithTag("Player" + (i + 1)).GetComponent<Player>();
             }
             players[i].transform.parent = gameObject.transform;
+            players[i].gameObject.SetActive(false);
         }
-        GameObject.FindWithTag("MainCamera").GetComponent<CameraScript>().setTarget(players[0].transform);
         activatePlayer(0);
 	}
 
     private void activatePlayer(int player){
-        //for (int i = 0; i < players.Length; i++) {
-        for (int i = 0; i < 1; i++) {
-               players[i].setActive(player == i);
+        for (int i = 0; i < players.Length; i++) {
+            players[i].transform.position = players[playerActive].transform.position;
+            players[i].setActive(player == i);
         }
+        playerActive = player;
         GameObject.FindWithTag("MainCamera").GetComponent<CameraScript>().setTarget(players[player].transform);
         GameObject.FindWithTag("Display").GetComponent<Display>().setDisplay(player+1);
     }

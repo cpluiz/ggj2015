@@ -11,9 +11,9 @@ GameObject:
   - 212: {fileID: 21277218}
   - 50: {fileID: 5077218}
   - 114: {fileID: 11477218}
-  - 61: {fileID: 6177218}
   - 58: {fileID: 5877218}
   - 95: {fileID: 9502704}
+  - 60: {fileID: 6082170}
   m_Layer: 9
   m_Name: Player3
   m_TagString: Player3
@@ -43,7 +43,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.53000021, y: 5.86000013, z: 0}
+  m_LocalPosition: {x: 24.9971294, y: 5.7581234, z: -90}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_Children:
   - {fileID: 477218}
@@ -85,10 +85,10 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Radius: .5
-  m_Center: {x: -.150000006, y: -.769999981}
---- !u!61 &6177218
-BoxCollider2D:
+  m_Radius: .400000006
+  m_Center: {x: -.150000006, y: -.850000024}
+--- !u!60 &6082170
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -96,8 +96,15 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: ab0888c61d38df94c899c2e1deafe256, type: 2}
   m_IsTrigger: 0
-  m_Size: {x: .899999976, y: 1.5}
-  m_Center: {x: -.100000001, y: .100000001}
+  m_Poly:
+    m_Paths:
+    - - {x: -.555682361, y: -.925899506}
+      - {x: .257769793, y: -.951541901}
+      - {x: .373190314, y: -.170796975}
+      - {x: .424613953, y: .865141332}
+      - {x: -.596917748, y: .873383343}
+    - - {x: -.410260022, y: -.999124944}
+      - {x: .180427551, y: -.97807163}
 --- !u!95 &9502704
 Animator:
   serializedVersion: 3
@@ -127,8 +134,8 @@ MonoBehaviour:
   maxSpeed: 6
   jumpForce: 1150
   margin: 0
-  facingRight: 0
-  grounded: 0
+  facingRight: 1
+  grounded: 1
   groundCheck: {fileID: 477218}
   isGround:
     serializedVersion: 2

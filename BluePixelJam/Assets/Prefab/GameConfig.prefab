@@ -46,7 +46,7 @@ MonoBehaviour:
   cursorTexture: {fileID: 2800000, guid: 8551aa550a95e4744bc6fe52c9247ea2, type: 3}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
-  faseAtual: 0
+  faseAtual: 1
 --- !u!114 &11462760
 MonoBehaviour:
   m_ObjectHideFlags: 1
