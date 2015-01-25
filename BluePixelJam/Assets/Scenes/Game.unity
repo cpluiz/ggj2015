@@ -771,8 +771,8 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Radius: .469999999
-  m_Center: {x: -.0399999991, y: -.810000002}
+  m_Radius: .50999999
+  m_Center: {x: -.0399999991, y: -.75}
 --- !u!61 &540400817
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -804,6 +804,9 @@ MonoBehaviour:
   grounded: 1
   groundCheck: {fileID: 1212580636}
   isGround:
+    serializedVersion: 2
+    m_Bits: 256
+  isEmpurravel:
     serializedVersion: 2
     m_Bits: 256
   motion: {fileID: 0}
@@ -1693,7 +1696,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 490736, guid: 847dd445ce58c9d4f8a960206d1bf023, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 847dd445ce58c9d4f8a960206d1bf023, type: 2}
@@ -1779,6 +1782,9 @@ MonoBehaviour:
   isGround:
     serializedVersion: 2
     m_Bits: 256
+  isEmpurravel:
+    serializedVersion: 2
+    m_Bits: 0
   motion: {fileID: 0}
 --- !u!50 &1173165533
 Rigidbody2D:
@@ -2268,6 +2274,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -2415,6 +2422,9 @@ MonoBehaviour:
   isGround:
     serializedVersion: 2
     m_Bits: 256
+  isEmpurravel:
+    serializedVersion: 2
+    m_Bits: 0
   motion: {fileID: 0}
 --- !u!50 &1601937287
 Rigidbody2D:
@@ -2504,6 +2514,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -2599,6 +2610,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
