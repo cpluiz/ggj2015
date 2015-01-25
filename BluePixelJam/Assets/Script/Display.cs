@@ -38,11 +38,12 @@ public class Display : MonoBehaviour
     }
 
     private void StartCutscene() {
+        GameObject.FindWithTag("Background").GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("backgrounds/bg"+lvl);
         Cutscene.GetComponentInChildren<Image>().sprite = Resources.Load<Sprite>("cutscenes/cutscene" + lvl);
         audioManager.playSound("The Builder", true);
         Cutscene.gameObject.SetActive(true);
         if (CutsceneText != null) {
-            CutsceneText.text = cut[lvl - 1];
+            CutsceneText.text = cut[(lvl-1)];
         }else{
             CutsceneText = GameObject.FindWithTag("CutsceneText").GetComponent<Text>();
             CutsceneText.text = cut[lvl - 1];
