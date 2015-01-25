@@ -16,11 +16,15 @@ public class Player : MonoBehaviour {
     private Animator motion;
     private bool active;
 
+	private Animator animRef;
+
     public void setActive(bool a) {
         active = a;
     }
 
 	void Awake(){
+			
+		animRef = gameObject.GetComponent<Animator> ();
         active = false;
 		facingRight = true;
 		groundRadius = 0.2f;
@@ -41,11 +45,13 @@ public class Player : MonoBehaviour {
     void FixedUpdate() {
         if (active) {
             grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, isGround);
+			animRef.SetBool("jump",!grounded);
             float move = Input.GetAxis("Horizontal");
             //motion.SetFloat("speed", Mathf.Abs(move));
             //motion.SetBool("grounded", grounded);
             rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y);
 
+			animRef.SetFloat("speed",Mathf.Abs(move));
 
             if ((move > 0 && !facingRight) || (move < 0 && facingRight))
             {

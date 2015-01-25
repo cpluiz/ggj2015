@@ -5,6 +5,9 @@ public class PlayerManager : MonoBehaviour {
 
     private Player[] players;
 
+    public void OnSceneLoad() {
+        Start();
+    }
 	// Use this for initialization
 	void Start () {
         players = new Player[3];
@@ -15,7 +18,7 @@ public class PlayerManager : MonoBehaviour {
             }
             players[i].transform.parent = gameObject.transform;
         }
-        GameObject.FindWithTag("MainCamera").GetComponent<Camera>().setTarget(players[0].transform);
+        GameObject.FindWithTag("MainCamera").GetComponent<CameraScript>().setTarget(players[0].transform);
         activatePlayer(0);
 	}
 
@@ -24,7 +27,7 @@ public class PlayerManager : MonoBehaviour {
         for (int i = 0; i < 1; i++) {
                players[i].setActive(player == i);
         }
-        GameObject.FindWithTag("MainCamera").GetComponent<Camera>().setTarget(players[player].transform);
+        GameObject.FindWithTag("MainCamera").GetComponent<CameraScript>().setTarget(players[player].transform);
         GameObject.FindWithTag("Display").GetComponent<Display>().setDisplay(player+1);
     }
 	
