@@ -55,7 +55,8 @@ public class Player : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D tile) {
         if (gameObject.rigidbody2D.mass > 1 && tile.gameObject.tag == "Empurravel") {
             if (tile.gameObject.rigidbody2D == null) {
-                tile.gameObject.AddComponent<Rigidbody2D>(); Debug.Log("Entrou na condição");
+                tile.gameObject.AddComponent<Rigidbody2D>();
+                tile.gameObject.rigidbody2D.fixedAngle = true;
                 animRef.SetBool("collidewall", true);
                 if (animRef.GetFloat("speed") > 0) { audioManager.playOneShot("arrastar"); }
             }

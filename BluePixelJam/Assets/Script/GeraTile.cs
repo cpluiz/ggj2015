@@ -23,6 +23,7 @@ public class GeraTile : MonoBehaviour {
 	//4 - portal
 	//5 - plataforma-meia-top
 	//6 - plataforma-meia-bot
+    //7 - bloco empurrável
 
 	int[,] tileMap = {
 		{2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
