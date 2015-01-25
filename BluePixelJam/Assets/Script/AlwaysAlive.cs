@@ -21,11 +21,12 @@ public class AlwaysAlive : MonoBehaviour {
     void Awake() {
         DontDestroyOnLoad(gameObject);
         #if UNITY_WEBPLAYER
-                patch = Application.dataPath.ToString() + "/fase.txt";
+            patch = Application.dataPath.ToString() + "/fase.json";
         #endif
         #if (UNITY_EDITOR || UNITY_EDITOR_WIN)
-                patch = "file://" + Application.dataPath.ToString() + "/fase.txt";
+            patch = "file://" + Application.dataPath.ToString() + "/fase.json";
         #endif
+            Debug.Log(patch);
         Start();
     }
 
