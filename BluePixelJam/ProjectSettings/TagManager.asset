@@ -15,7 +15,7 @@ TagManager:
   - Pause
   - Cutscene
   - MainDisplay
-  - "Empurr\xE1vel"
+  - StatusKeeper
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

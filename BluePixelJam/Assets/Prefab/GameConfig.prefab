@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11462760}
   m_Layer: 0
   m_Name: GameConfig
   m_TagString: GameController
@@ -40,12 +41,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMute: 0
-  testMode: 1
+  testMode: 0
   unlockAll: 0
   cursorTexture: {fileID: 2800000, guid: 8551aa550a95e4744bc6fe52c9247ea2, type: 3}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
   faseAtual: 0
+--- !u!114 &11462760
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ecf2a4a7eef89d41ad0613b8a35c0f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fase: 0
+  faseMax: 0
+  patch: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

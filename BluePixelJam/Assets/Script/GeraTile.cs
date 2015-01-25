@@ -9,7 +9,7 @@ public class GeraTile : MonoBehaviour {
     [SerializeField]
     private Bounds mapBounds;
 
-	public float timer;
+	private float timer;
 
 	public GameObject holder;
 
@@ -40,6 +40,10 @@ public class GeraTile : MonoBehaviour {
 
 	void Start()
 	{
+        GameObject controller = GameObject.FindWithTag("GameController");
+        FaseObject map = controller.GetComponent<AlwaysAlive>().getFase(controller.GetComponent<GameConfig>().getFase());
+        tileMap = map.tiles;
+        timer = map.time;
 		xLength = tileMap.GetLength (0);
 		yLength = tileMap.GetLength (1);
 

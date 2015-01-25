@@ -5,33 +5,37 @@ using System.IO;
 using System.Text;
 using System;
 
-public class FaseObject {
-	public int lvl;
-	public int[][] tiles;
+public class FaseObject
+{
+    public int lvl;
+    public int[,] tiles;
+    public float time;
 }
 
-public class AlwaysAlive : MonoBehaviour {
+public class AlwaysAlive : MonoBehaviour
+{
 
-	public int fase = 0;
-	public int faseMax = 0;
-	public JSONObject fases;
-	public FaseObject[] fasesObj;
+    public int fase = 0;
+    public int faseMax = 0;
+    public JSONObject fases;
+    public FaseObject[] fasesObj;
     public string patch;
 
-    void Awake() {
+    void Awake()
+    {
         DontDestroyOnLoad(gameObject);
-        #if UNITY_WEBPLAYER
-            patch = Application.dataPath.ToString() + "/fase.json";
-        #endif
-        #if (UNITY_EDITOR || UNITY_EDITOR_WIN)
-            patch = "file://" + Application.dataPath.ToString() + "/fase.json";
-        #endif
-            Debug.Log(patch);
+#if UNITY_WEBPLAYER
+        patch = Application.dataPath.ToString() + "/fase.json";
+#endif
+#if (UNITY_EDITOR || UNITY_EDITOR_WIN)
+        patch = "file://" + Application.dataPath.ToString() + "/fase.json";
+#endif
+        Debug.Log(patch);
         Start();
     }
 
     IEnumerator Start()
-	{
+    {
         WWW www = new WWW(patch);
         yield return www;
         if (www.error == null)
@@ -42,42 +46,46 @@ public class AlwaysAlive : MonoBehaviour {
         {
             Debug.Log("Error: " + www.error);
         }
-        
+
     }
-    private void LoadTiles(string stuff){
-		JSONObject j = new JSONObject(stuff);
-		fases = j;
+    private void LoadTiles(string stuff)
+    {
+        JSONObject j = new JSONObject(stuff);
+        fases = j;
 
-		//Debug.Log(fases);
-		//Debug.Log(fases["mapas"]);
+        //Debug.Log(fases);
+        //Debug.Log(fases["mapas"]);
 
-		fasesObj = new FaseObject[fases["mapas"].Count];
-		int count = 0;
-		int x = 0;
+        fasesObj = new FaseObject[fases["mapas"].Count];
+        int count = 0;
+        int x = 0;
 
-		foreach (var member in fases["mapas"].list) {
-			Debug.Log(member);
+        foreach (var member in fases["mapas"].list)
+        {
+            fasesObj[count] = new FaseObject();
+            fasesObj[count].lvl = (int)member["fase"].n;
+            fasesObj[count].time = (float)member["time"].n;
+            int[] line = new int[member["tiles"].Count];
+            int columns = member.list[1].list[0].str.Length;
+            x = 0;
+            fasesObj[count].tiles = new int[line.Length,columns];
+            foreach (var tiles in member["tiles"].list)
+            {
+               line = Array.ConvertAll(tiles.str.ToCharArray(), c => (int)Char.GetNumericValue(c));
+               for (int i = 0; i < line.Length; i++) {
+                   fasesObj[count].tiles[x,i] = line[i];
+                }
+                x++;
+            }
 
-			fasesObj[count] = new FaseObject();
-			fasesObj[count].lvl = (int)member["fase"].n;
-			fasesObj[count].tiles = new int[member["tiles"].Count][];
+            count++;
+            //Debug.Log(fases["mapas"].keys[i]);
+        }
+        faseMax = count;
+    }
 
-			x = 0;
-			foreach (var tiles in member["tiles"].list) {
-				Debug.Log(tiles);
-				fasesObj[count].tiles[x] = Array.ConvertAll(tiles.str.ToCharArray(), c => (int)Char.GetNumericValue(c));
-				var test = fasesObj[count].tiles[x];
-				x++;
-			}
-
-			count++;
-			//Debug.Log(fases["mapas"].keys[i]);
-		}
-	}
-
-	public object getFase(){
-		object fasi = fases["mapas"][fase]["tiles"];
-		Debug.Log (fasi);
-		return fasi;
-	}
+    public FaseObject getFase(int fase)
+    {
+        return fasesObj[fase - 1];
+    }
 }

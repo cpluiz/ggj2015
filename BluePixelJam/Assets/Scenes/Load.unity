@@ -74,53 +74,6 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
---- !u!1 &164024356
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 164024358}
-  - 114: {fileID: 164024357}
-  m_Layer: 5
-  m_Name: StatusKeeper
-  m_TagString: Respawn
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &164024357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 164024356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ecf2a4a7eef89d41ad0613b8a35c0f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fase: 0
-  faseMax: 0
-  patch: 
---- !u!224 &164024358
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 164024356}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 102}
-  m_LocalScale: {x: .0246913582, y: .0246913582, z: .0246913582}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: .5, y: .5}
 --- !u!1 &244910110
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +177,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &275671136
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +250,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &741249425
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,7 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playBt: {fileID: 1641356650}
   levels: {fileID: 741249427}
-  holder: {fileID: 164024356}
+  holder: {fileID: 0}
   lvl: 0
 --- !u!1 &780108973
 GameObject:
@@ -450,7 +403,7 @@ RectTransform:
   - {fileID: 1641356645}
   - {fileID: 741249426}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -736,7 +689,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1 &1638193809
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,7 +937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playBt: {fileID: 1641356650}
   levels: {fileID: 741249427}
-  holder: {fileID: 164024356}
+  holder: {fileID: 0}
   lvl: 0
 --- !u!95 &1641356650
 Animator:

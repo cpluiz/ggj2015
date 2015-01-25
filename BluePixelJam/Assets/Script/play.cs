@@ -5,8 +5,9 @@ using System.IO;
 public class play : MonoBehaviour {
 	// Use this for initialization
 	public JSONObject Fases;
+    private GameObject controller;
 	void Start () {
-	
+        controller = GameObject.FindWithTag("GameController");
 	}
 	
 	// Update is called once per frame
@@ -15,10 +16,9 @@ public class play : MonoBehaviour {
 	}
 
 	public void goToLevel(int level) {
-        if (holder.GetComponent<AlwaysAlive>().faseMax >= lvl)
+        if (controller.GetComponent<AlwaysAlive>().faseMax >= level)
         {
-            preparaFases();
-            GameObject.Find("GameConfig").GetComponent<GameConfig>().setFase(level);
+            controller.GetComponent<GameConfig>().setFase(level);
             Application.LoadLevel("Game");
         }
 	}
@@ -33,9 +33,4 @@ public class play : MonoBehaviour {
 		levels.SetBool("Hidden", false);
 	}
 	
-
-	public void preparaFases(){
-		holder.GetComponent<AlwaysAlive>().fase = lvl;
-		//holder.GetComponent<AlwaysAlive>().getFase();
-	}
 }

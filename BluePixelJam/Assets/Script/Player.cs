@@ -38,7 +38,14 @@ public class Player : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D tile) {
         if (tile.tag == "Portal" && active) {
-            Application.LoadLevel("Load");
+            GameConfig config = GameObject.FindWithTag("GameController").GetComponent<GameConfig>();
+            AlwaysAlive fases = config.transform.GetComponent<AlwaysAlive>();
+            if (config.getFase() < fases.faseMax) {
+                config.setFase(config.getFase()+1);
+                Application.LoadLevel("Game");
+            }else{
+                Application.LoadLevel("Load");
+            }
         }
     }
 
