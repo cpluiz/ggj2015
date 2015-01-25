@@ -55,16 +55,13 @@ public class Player : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D tile) {
         if (gameObject.rigidbody2D.mass > 1 && tile.gameObject.tag == "Empurravel" && grounded) {
-			print("Collide");
-            if (tile.gameObject.tag == "Empurravel") {
-				//Verificar collider tag
+            if (tile.gameObject.rigidbody2D == null) {
                 tile.gameObject.AddComponent<Rigidbody2D>();
                 tile.gameObject.rigidbody2D.fixedAngle = true;
                 animRef.SetBool("collidewall", true);
                 if (animRef.GetFloat("speed") > 0) { audioManager.playOneShot("arrastar"); }
             }
         }else if(tile.gameObject.rigidbody2D && gameObject.rigidbody2D.mass<=1){
-			print("Collide cancel");
             animRef.SetBool("collidewall", false);
             Destroy(tile.gameObject.rigidbody2D);
         }
