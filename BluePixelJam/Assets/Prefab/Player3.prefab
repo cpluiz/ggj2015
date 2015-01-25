@@ -14,6 +14,7 @@ GameObject:
   - 58: {fileID: 5877218}
   - 95: {fileID: 9502704}
   - 60: {fileID: 6082170}
+  - 61: {fileID: 6127800}
   m_Layer: 9
   m_Name: Player3
   m_TagString: Player3
@@ -43,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.9971294, y: 5.7581234, z: -90}
+  m_LocalPosition: {x: 45.6156387, y: 14.8594065, z: -90}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_Children:
   - {fileID: 477218}
@@ -105,6 +106,17 @@ PolygonCollider2D:
       - {x: -.596917748, y: .873383343}
     - - {x: -.410260022, y: -.999124944}
       - {x: .180427551, y: -.97807163}
+--- !u!61 &6127800
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177216}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1.23000002, y: 2.24000001}
+  m_Center: {x: -.0799999982, y: -.170000002}
 --- !u!95 &9502704
 Animator:
   serializedVersion: 3
@@ -140,6 +152,9 @@ MonoBehaviour:
   isGround:
     serializedVersion: 2
     m_Bits: 256
+  isEmpurravel:
+    serializedVersion: 2
+    m_Bits: 0
   motion: {fileID: 0}
 --- !u!212 &21277218
 SpriteRenderer:

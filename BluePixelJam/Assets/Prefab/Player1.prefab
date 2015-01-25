@@ -14,6 +14,7 @@ GameObject:
   - 58: {fileID: 5835660}
   - 61: {fileID: 6159298}
   - 95: {fileID: 9500000}
+  - 61: {fileID: 6115388}
   m_Layer: 9
   m_Name: Player1
   m_TagString: Player1
@@ -43,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.6784086, y: .0238490105, z: -90}
+  m_LocalPosition: {x: 41.9537125, y: 15.4949474, z: -90}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 435660}
@@ -87,6 +88,17 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: .460000008
   m_Center: {x: .129999995, y: -.49000001}
+--- !u!61 &6115388
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129258}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1.50999999, y: 1.88999999}
+  m_Center: {x: .150000006, y: -.0900000036}
 --- !u!61 &6159298
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -133,6 +145,9 @@ MonoBehaviour:
   isGround:
     serializedVersion: 2
     m_Bits: 256
+  isEmpurravel:
+    serializedVersion: 2
+    m_Bits: 0
   motion: {fileID: 0}
 --- !u!212 &21229258
 SpriteRenderer:

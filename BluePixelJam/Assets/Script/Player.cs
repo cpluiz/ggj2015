@@ -17,7 +17,8 @@ public class Player : MonoBehaviour {
     private bool active;
     private AudioManager audioManager;
     private Collider2D[] tile;
-    private bool empurrando;
+    [SerializeField]
+    private bool empurrando, emcima;
 
 	private Animator animRef;
 
@@ -51,57 +52,58 @@ public class Player : MonoBehaviour {
             }else{
                 Application.LoadLevel("Load");
             }
-        }
-    }
-
-    void OnTriggerEnter2D(Collision2D tile) {
-        if (gameObject.tag == "Player2" && tile.gameObject.tag == "Empurravel" && grounded){
-            if (tile.gameObject.rigidbody2D == null) {
+        }else if (gameObject.tag == "Player2" && tile.tag == "Empurravel"){
+            if (tile.rigidbody2D == null) {
                 tile.gameObject.AddComponent<Rigidbody2D>();
-                tile.gameObject.rigidbody2D.fixedAngle = true;
-                animRef.SetBool("collidewall", true);
-                if (animRef.GetFloat("speed") > 0) { audioManager.playOneShot("arrastar"); }
+                tile.rigidbody2D.fixedAngle = true;
+                empurrando = true;
+                InvokeRepeating("playArrastar", 0.1f, 1.5f);
+            }else if(!grounded){
+                empurrando = false;
+                Destroy(tile.gameObject.rigidbody2D);
             }
-        }else if (tile.gameObject.rigidbody2D && gameObject.tag != "Player2")
-        {
-            animRef.SetBool("collidewall", false);
+        }else if (tile.gameObject.rigidbody2D && gameObject.tag != "Player2"){
             Destroy(tile.gameObject.rigidbody2D);
         }
     }
 
-    void OnTriggerStay2D(Collision2D tile) {
-        if (gameObject.tag == "Player2" && tile.gameObject.tag != "Empurravel" && empurrando){
-            empurrando = false;
-        }else if (gameObject.tag == "Player2" && tile.gameObject.tag == "Empurravel" && !grounded) {
-            empurrando = (true && grounded);
-            animRef.SetBool("collidewall", empurrando);
-            animRef.SetBool("jump", false);
-            Destroy(tile.gameObject.rigidbody2D);
-        }
-        if (gameObject.tag == "Player2") { animRef.SetBool("collidewall", empurrando); }
+    private void playArrastar() {
+        if (empurrando) { 
+           if(animRef.GetFloat("speed")>0 && !emcima){audioManager.playOneShot("arrastar");} 
+        } else { CancelInvoke("playArrastar"); }
     }
 
-    void OnTriggerExit2D(Collision2D tile) {
+    void OnTriggerStay2D(Collider2D tile) {
+        if (gameObject.tag == "Player2" && tile.gameObject.tag == "Empurravel") {
+            if(!grounded || emcima){
+                empurrando = false;
+                Destroy(tile.gameObject.rigidbody2D);
+            }else if(tile.rigidbody2D == null){
+                tile.gameObject.AddComponent<Rigidbody2D>();
+                tile.rigidbody2D.fixedAngle = true;
+                empurrando = true;
+                InvokeRepeating("playArrastar", 0.1f, 1.5f);
+            }else{
+                empurrando = true;
+            }
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D tile) {
         if (gameObject.tag == "Player2" && empurrando){
-            animRef.SetBool("collidewall", false);
+            empurrando = false;
         }
     }
+
+    public void player2collision() { empurrando = false; emcima = true; }
+    public void player2stopCollision() { emcima = false; }
 
     void FixedUpdate() {
         if (active) {
             if (gameObject.tag == "Player2") {
-                Physics2D.OverlapCircleNonAlloc(new Vector2(groundCheck.position.x, groundCheck.position.y), groundRadius, tile);
-                if (empurrando && tile != null) {
-                    grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, isGround);
-                    for (int i = 0; i < tile.Length; i++) {
-                        if (tile[i].tag == "Empurravel") { grounded = false; empurrando = false; }
-                    }
-                }else{
-                    grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, isGround);
-                }
-            } else {
-                grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, isGround);
+                animRef.SetBool("collidewall", (empurrando && grounded && !emcima));
             }
+            grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, isGround);
             animRef.SetBool("jump", !grounded);
             float move = Input.GetAxis("Horizontal");
             //motion.SetFloat("speed", Mathf.Abs(move));

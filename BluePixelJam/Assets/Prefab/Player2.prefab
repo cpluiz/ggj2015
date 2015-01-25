@@ -30,6 +30,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 490738}
+  - 61: {fileID: 6169672}
+  - 114: {fileID: 11442274}
   m_Layer: 9
   m_Name: GroundCheck
   m_TagString: Untagged
@@ -44,7 +46,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.4546776, y: 15.8462009, z: -90}
+  m_LocalPosition: {x: 38.019413, y: 15.9640369, z: -90}
   m_LocalScale: {x: 1.70000005, y: 1.70000005, z: 1}
   m_Children:
   - {fileID: 490738}
@@ -88,6 +90,17 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: .50999999
   m_Center: {x: -.0399999991, y: -.75}
+--- !u!61 &6169672
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190738}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .600000024, y: .529999971}
+  m_Center: {x: 0, y: .0399999991}
 --- !u!61 &6190738
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -108,8 +121,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 1.25, y: 2.30999994}
-  m_Center: {x: -.0399999991, y: -.170000002}
+  m_Size: {x: 1.29999995, y: 2.05999994}
+  m_Center: {x: -.0299999993, y: 0}
 --- !u!95 &9537964
 Animator:
   serializedVersion: 3
@@ -125,6 +138,17 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11442274
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 787c8fb2188444c4783090b31da24a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11490738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,7 +163,7 @@ MonoBehaviour:
   maxSpeed: 3
   jumpForce: 850
   margin: 0
-  facingRight: 1
+  facingRight: 0
   grounded: 1
   groundCheck: {fileID: 490738}
   isGround:
