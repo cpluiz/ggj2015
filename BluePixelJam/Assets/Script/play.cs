@@ -5,20 +5,22 @@ using System.IO;
 public class play : MonoBehaviour {
 	// Use this for initialization
 	public JSONObject Fases;
+    private GameObject controller;
+
 	void Start () {
-	
+        controller = GameObject.FindWithTag("GameController");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
 	}
 
 	public void goToLevel(int level) {
-        if (holder.GetComponent<AlwaysAlive>().faseMax >= lvl)
+        while (controller == null) { Start(); }
+        if (controller.GetComponent<AlwaysAlive>().faseMax >= level)
         {
-            preparaFases();
-            GameObject.Find("GameConfig").GetComponent<GameConfig>().setFase(level);
+            GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>().playOneShot("start");
+            controller.GetComponent<GameConfig>().setFase(level);
             Application.LoadLevel("Game");
         }
 	}
@@ -33,9 +35,4 @@ public class play : MonoBehaviour {
 		levels.SetBool("Hidden", false);
 	}
 	
-
-	public void preparaFases(){
-		holder.GetComponent<AlwaysAlive>().fase = lvl;
-		//holder.GetComponent<AlwaysAlive>().getFase();
-	}
 }

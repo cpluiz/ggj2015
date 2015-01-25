@@ -18,6 +18,8 @@ public class GameConfig : MonoBehaviour {
         if (!testMode && Application.loadedLevelName == "Preload"){
             DontDestroyOnLoad(transform.gameObject);
             Application.LoadLevel("Load");
+        }else{
+            Application.LoadLevel("Preload");
         }
 	}
 	void Start()
