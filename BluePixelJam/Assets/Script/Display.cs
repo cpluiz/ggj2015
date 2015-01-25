@@ -93,6 +93,7 @@ public class Display : MonoBehaviour
             Timer.text = Math.Round(timer, 0).ToString();
         }
         if (runing && timer <= 0) {
+            GameObject.FindWithTag("GameController").GetComponent<GameConfig>().setFase(1);
             Application.LoadLevel("Load");
         }
     }

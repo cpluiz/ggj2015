@@ -11,11 +11,12 @@ public class Player : MonoBehaviour {
 	private Transform groundCheck;
     private float groundRadius;
     [SerializeField]
-    private LayerMask isGround;
+    private LayerMask isGround, isEmpurravel;
     [SerializeField]
     private Animator motion;
     private bool active;
     private AudioManager audioManager;
+    private Collider2D[] tile;
 
 	private Animator animRef;
 
@@ -28,7 +29,7 @@ public class Player : MonoBehaviour {
 		animRef = gameObject.GetComponent<Animator> ();
         active = false;
 		facingRight = true;
-		groundRadius = 0.2f;
+		groundRadius = 0.001f;
         audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
 	}
 	
@@ -53,7 +54,7 @@ public class Player : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D tile) {
-        if (gameObject.rigidbody2D.mass > 1 && tile.gameObject.tag == "Empurravel") {
+        if (gameObject.rigidbody2D.mass > 1 && tile.gameObject.tag == "Empurravel" && grounded) {
             if (tile.gameObject.rigidbody2D == null) {
                 tile.gameObject.AddComponent<Rigidbody2D>();
                 tile.gameObject.rigidbody2D.fixedAngle = true;
@@ -61,20 +62,41 @@ public class Player : MonoBehaviour {
                 if (animRef.GetFloat("speed") > 0) { audioManager.playOneShot("arrastar"); }
             }
         }else if(tile.gameObject.rigidbody2D && gameObject.rigidbody2D.mass<=1){
+            animRef.SetBool("collidewall", false);
+            Destroy(tile.gameObject.rigidbody2D);
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D tile) {
+        if (gameObject.rigidbody2D.mass > 1 && tile.gameObject.tag == "Empurravel" && !grounded) {
+            animRef.SetBool("collidewall", (true && grounded));
+            animRef.SetBool("jump", false);
             Destroy(tile.gameObject.rigidbody2D);
         }
     }
 
     void OnCollisionExit2D(Collision2D tile) {
-        if (tile.gameObject.tag == "Empurravel") {
-            if (tile.gameObject.rigidbody2D != null) { Destroy(tile.gameObject.rigidbody2D); animRef.SetBool("collidewall", false); }
+        if (gameObject.rigidbody2D.mass > 1){
+            animRef.SetBool("collidewall", false);
         }
     }
 
     void FixedUpdate() {
         if (active) {
-            grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, isGround);
-			animRef.SetBool("jump",!grounded);
+            if (gameObject.rigidbody2D.mass > 1) {
+                Physics2D.OverlapCircleNonAlloc(new Vector2(groundCheck.position.x, groundCheck.position.y), groundRadius, tile);
+                if (animRef.GetBool("collidewall") && tile != null) {
+                    grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, isGround);
+                    for (int i = 0; i < tile.Length; i++) {
+                        if (tile[i].tag == "Empurravel") { grounded = false; }
+                    }
+                }else{
+                    grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, isGround);
+                }
+            } else {
+                grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, isGround);
+            }
+            animRef.SetBool("jump", !grounded);
             float move = Input.GetAxis("Horizontal");
             //motion.SetFloat("speed", Mathf.Abs(move));
             //motion.SetBool("grounded", grounded);
