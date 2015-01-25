@@ -19,6 +19,7 @@ public class play : MonoBehaviour {
         while (controller == null) { Start(); }
         if (controller.GetComponent<AlwaysAlive>().faseMax >= level)
         {
+            GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>().playOneShot("start");
             controller.GetComponent<GameConfig>().setFase(level);
             Application.LoadLevel("Game");
         }
