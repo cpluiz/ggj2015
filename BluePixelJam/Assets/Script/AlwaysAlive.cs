@@ -28,14 +28,14 @@ public class AlwaysAlive : MonoBehaviour
         patch = Application.dataPath.ToString() + "/fase.json";
 #endif
 #if (UNITY_EDITOR || UNITY_EDITOR_WIN)
-        patch = "file://" + Application.dataPath.ToString() + "/fase.json";
+        patch = "file://" + Application.dataPath.ToString() + "/Resources/fase.json";
 #endif
         Start();
     }
 
-#if (UNITY_WEBPLAYER || UNITY_EDITOR || UNITY_EDITOR_WIN)
     IEnumerator Start()
     {
+#if (UNITY_WEBPLAYER || UNITY_EDITOR || UNITY_EDITOR_WIN)
         WWW www = new WWW(patch);
         yield return www;
         if (www.error == null)
@@ -48,10 +48,12 @@ public class AlwaysAlive : MonoBehaviour
         }
 #endif
 #if UNITY_STANDALONE
-        TextAsset textFile = (TextAsset)Resources.Load("fase.json",typeof(TextAsset));
-        LoadTiles(textFile.ToString());
-    }
+        TextAsset textFile = Resources.Load <TextAsset>("fase");
+        string text = textFile.ToString();
+        yield return new WaitForSeconds(0.01f);
+        LoadTiles(text);
 #endif
+    }
     private void LoadTiles(string stuff)
     {
         JSONObject j = new JSONObject(stuff);

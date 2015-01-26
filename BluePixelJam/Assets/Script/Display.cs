@@ -34,7 +34,6 @@ public class Display : MonoBehaviour
         config = GameObject.FindWithTag("GameController").GetComponent<GameConfig>();
         Pause.gameObject.SetActive(false);
         PauseButton.gameObject.SetActive(false);
-        StartCutscene();
     }
 
     private void StartCutscene() {
