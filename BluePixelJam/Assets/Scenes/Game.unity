@@ -523,7 +523,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &317602264
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,7 +916,7 @@ Transform:
   m_Children:
   - {fileID: 1212580636}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!61 &540400822
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2766,10 +2766,47 @@ MonoBehaviour:
   - {fileID: 122142, guid: 3fdf244303e468c48a69dd2c91182a07, type: 2}
   - {fileID: 122142, guid: 991eef6724ce06c4a8ffb705aa54c273, type: 2}
   - {fileID: 132084, guid: cfc897de97ffc1048afb37a09da2a583, type: 2}
+  tilesImg:
+  - {fileID: 21300000, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300002, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300004, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300006, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300008, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300010, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300012, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300014, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300016, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300018, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300020, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300022, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300024, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300026, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300028, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300030, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300032, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300034, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300036, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300038, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300040, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300042, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300044, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300046, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300048, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300050, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300052, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300054, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300056, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300058, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300060, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300062, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300064, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300066, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
+  - {fileID: 21300068, guid: eefb846e6c9925341ba8d09f629fa4bf, type: 3}
   tileDistance: 2.55999994
   mapBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
+  timer: 60
   holder: {fileID: 0}
 --- !u!4 &2046928334
 Transform:
