@@ -15,6 +15,10 @@ TagManager:
   - Pause
   - Cutscene
   - MainDisplay
+  - StatusKeeper
+  - Empurravel
+  - CutsceneText
+  - Background
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -49,13 +53,13 @@ TagManager:
   User Layer 30: 
   User Layer 31: 
   m_SortingLayers:
+  - name: Background
+    userID: 5
+    uniqueID: 3818637711
+    locked: 0
   - name: Default
     userID: 0
     uniqueID: 0
-    locked: 0
-  - name: Cutscene
-    userID: 4
-    uniqueID: 636666079
     locked: 0
   - name: GUI
     userID: 1
@@ -68,4 +72,8 @@ TagManager:
   - name: Tiles
     userID: 2
     uniqueID: 2088169471
+    locked: 0
+  - name: Cutscene
+    userID: 4
+    uniqueID: 636666079
     locked: 0

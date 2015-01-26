@@ -158,7 +158,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!1001 &288062703
+--- !u!1001 &827929744
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -198,12 +198,8 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 6108f81df7c00524f98c08f093800f74, type: 2}
-      propertyPath: testMode
+      propertyPath: isMute
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 6108f81df7c00524f98c08f093800f74, type: 2}
-      propertyPath: m_TagString
-      value: GameController
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6108f81df7c00524f98c08f093800f74, type: 2}
@@ -214,11 +210,12 @@ Prefab:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100000, guid: 6108f81df7c00524f98c08f093800f74, type: 2}
-  m_PrefabInternal: {fileID: 288062703}
+  m_PrefabInternal: {fileID: 827929744}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1169500765}
   - 114: {fileID: 1169500764}
+  - 114: {fileID: 1169500766}
   m_Layer: 0
   m_Name: GameConfig
   m_TagString: GameController
@@ -231,7 +228,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400000, guid: 6108f81df7c00524f98c08f093800f74,
     type: 2}
-  m_PrefabInternal: {fileID: 288062703}
+  m_PrefabInternal: {fileID: 827929744}
   m_GameObject: {fileID: 1169500763}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -244,12 +241,12 @@ MonoBehaviour:
   cursorTexture: {fileID: 2800000, guid: 8551aa550a95e4744bc6fe52c9247ea2, type: 3}
   cursorMode: 0
   hotSpot: {x: 0, y: 0}
-  faseAtual: 0
+  faseAtual: 1
 --- !u!4 &1169500765
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400000, guid: 6108f81df7c00524f98c08f093800f74, type: 2}
-  m_PrefabInternal: {fileID: 288062703}
+  m_PrefabInternal: {fileID: 827929744}
   m_GameObject: {fileID: 1169500763}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .440456688, y: -.92102021, z: 0}
@@ -257,3 +254,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &1169500766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11462760, guid: 6108f81df7c00524f98c08f093800f74,
+    type: 2}
+  m_PrefabInternal: {fileID: 827929744}
+  m_GameObject: {fileID: 1169500763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ecf2a4a7eef89d41ad0613b8a35c0f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fase: 0
+  faseMax: 0
+  patch: 

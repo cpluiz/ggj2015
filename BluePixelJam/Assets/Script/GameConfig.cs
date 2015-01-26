@@ -12,16 +12,22 @@ public class GameConfig : MonoBehaviour {
 	public Vector2 hotSpot = Vector2.zero;
     [SerializeField]
     private int faseAtual = 0;
+
+	public static GameConfig instance;
 	
 	void Awake()
 	{
         if (!testMode && Application.loadedLevelName == "Preload"){
             DontDestroyOnLoad(transform.gameObject);
             Application.LoadLevel("Load");
+        }else{
+            Application.LoadLevel("Preload");
         }
 	}
+
 	void Start()
 	{
+		GameConfig.instance = this;
 		//Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
 	}
 
