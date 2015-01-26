@@ -30,10 +30,10 @@ public class AlwaysAlive : MonoBehaviour
 #if (UNITY_EDITOR || UNITY_EDITOR_WIN)
         patch = "file://" + Application.dataPath.ToString() + "/fase.json";
 #endif
-        Debug.Log(patch);
         Start();
     }
 
+#if (UNITY_WEBPLAYER || UNITY_EDITOR || UNITY_EDITOR_WIN)
     IEnumerator Start()
     {
         WWW www = new WWW(patch);
@@ -46,8 +46,12 @@ public class AlwaysAlive : MonoBehaviour
         {
             Debug.Log("Error: " + www.error);
         }
-
+#endif
+#if UNITY_STANDALONE
+        TextAsset textFile = (TextAsset)Resources.Load("fase.json",typeof(TextAsset));
+        LoadTiles(textFile.ToString());
     }
+#endif
     private void LoadTiles(string stuff)
     {
         JSONObject j = new JSONObject(stuff);
