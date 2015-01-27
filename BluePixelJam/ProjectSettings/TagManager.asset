@@ -19,6 +19,8 @@ TagManager:
   - Empurravel
   - CutsceneText
   - Background
+  - RightJoystick
+  - LeftJoystick
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

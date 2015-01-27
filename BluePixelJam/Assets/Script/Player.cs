@@ -19,6 +19,10 @@ public class Player : MonoBehaviour {
     private Collider2D[] tile;
     [SerializeField]
     private bool empurrando, emcima;
+    private float move;
+#if UNITY_ANDROID
+    private Joystick joystick;
+#endif
 
 	private Animator animRef;
 
@@ -34,14 +38,32 @@ public class Player : MonoBehaviour {
 		facingRight = true;
 		groundRadius = 0.001f;
         audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
+#if UNITY_ANDROID
+        joystick = GameObject.FindWithTag("Display").GetComponent<Display>().joystick;
+#endif
 	}
 	
 	void Update(){
+#if UNITY_ANDROID
+        if (joystick == null) { Awake(); }
+        if (grounded && joystick.position.y>0 && Time.timeScale > 0 && active){
+			rigidbody2D.AddForce(new Vector2(0, jumpForce));
+            audioManager.playOneShot("jump");
+        }
+#else
         if (grounded && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && Time.timeScale > 0 && active){
 			rigidbody2D.AddForce(new Vector2(0, jumpForce));
             audioManager.playOneShot("jump");
-		}
-        float move = Input.GetAxis("Horizontal");
+        }
+#endif
+
+#if UNITY_ANDROID
+        if (Time.timeScale > 0) {
+            if (joystick.position.x > 0) { move += 0.1f; } else if (joystick.position.x < 0) { move -= 0.1f; }
+        }
+#else
+        move = Input.GetAxis("Horizontal");
+#endif
         rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y);
 
         animRef.SetFloat("speed", Mathf.Abs(move));

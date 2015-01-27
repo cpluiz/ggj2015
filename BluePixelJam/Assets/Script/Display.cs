@@ -16,6 +16,9 @@ public class Display : MonoBehaviour
     private AudioManager audioManager;
     private GameConfig config;
     private string[] cut;
+#if UNITY_ANDROID
+    public Joystick joystick;
+#endif
 
     void Start() {
         cut = new string[3];
@@ -34,10 +37,17 @@ public class Display : MonoBehaviour
         config = GameObject.FindWithTag("GameController").GetComponent<GameConfig>();
         Pause.gameObject.SetActive(false);
         PauseButton.gameObject.SetActive(false);
+#if UNITY_ANDROID
+        joystick = GameObject.FindWithTag("RightJoystick").GetComponent<Joystick>();
+        joystick.gameObject.SetActive(false);
+#endif
     }
 
     private void StartCutscene() {
         GameObject.FindWithTag("Background").GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("backgrounds/bg"+lvl);
+#if UNITY_ANDROID
+        joystick.gameObject.SetActive(false);
+#endif
         Cutscene.GetComponentInChildren<Image>().sprite = Resources.Load<Sprite>("cutscenes/cutscene" + lvl);
         audioManager.playSound("The Builder", true);
         Cutscene.gameObject.SetActive(true);
@@ -78,6 +88,9 @@ public class Display : MonoBehaviour
         MainDisplay.gameObject.SetActive(true);
         runing = true;
         audioManager.playSound("Monkeys Spinning Monkeys", true);
+#if UNITY_ANDROID
+        joystick.gameObject.SetActive(true);
+#endif
     }
 
     public void setDisplay(int character) {
