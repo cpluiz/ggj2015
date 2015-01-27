@@ -22,6 +22,7 @@ public class Player : MonoBehaviour {
     private float move;
 #if UNITY_ANDROID
     private Joystick joystick;
+    private float joySpeed = 0.01f;
 #endif
 
 	private Animator animRef;
@@ -59,7 +60,13 @@ public class Player : MonoBehaviour {
 
 #if UNITY_ANDROID
         if (Time.timeScale > 0) {
-            if (joystick.position.x > 0) { move += 0.1f; } else if (joystick.position.x < 0) { move -= 0.1f; }
+            if (joystick.position.x > 0 && move <= 1) { move += joySpeed; } else if (joystick.position.x < 0 && move >= 1) { move -= joySpeed; }
+            if (joystick.position.x == 0) {
+                if (move > 0) { move -= joySpeed; }else
+                if (move < 0) { move += joySpeed; }else{
+                    move = 0;
+                }
+            }
         }
 #else
         move = Input.GetAxis("Horizontal");
