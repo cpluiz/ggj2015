@@ -251,9 +251,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Timer: {fileID: 11458346}
-  timer: 0
+  CutsceneText: {fileID: 0}
+  timer: 99999
   runing: 0
   lvl: 0
+  characterDisplay: {fileID: 0}
+  PauseButton: {fileID: 0}
+  Pause: {fileID: 0}
+  Cutscene: {fileID: 0}
+  MainDisplay: {fileID: 0}
+  audioManager: {fileID: 0}
+  config: {fileID: 0}
+  cut: []
 --- !u!222 &22258346
 CanvasRenderer:
   m_ObjectHideFlags: 1

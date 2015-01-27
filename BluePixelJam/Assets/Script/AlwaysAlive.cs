@@ -24,15 +24,34 @@ public class AlwaysAlive : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        patch = "http://bpixel.com.br/dev/ggj/ggj15/fase.json";
+#if (UNITY_EDITOR || UNITY_EDITOR_WIN)
+        //patch = "file://" + Application.dataPath.ToString() + "/Resources/fase.json";
+#endif
         Start();
     }
 
     IEnumerator Start()
     {
-        TextAsset textFile = Resources.Load <TextAsset>("fase");
-        string text = textFile.ToString();
-        yield return new WaitForSeconds(0.01f);
-        LoadTiles(text);
+#if UNITY_STANDALONE
+        TextAsset fases = Resources.Load<TextAsset>("fase");
+        yield return new WaitForSeconds(0.002f);
+        LoadTiles(fases.ToString());
+#else
+        WWW www = new WWW(patch);
+        yield return www;
+        if (www.error == null)
+        {
+            LoadTiles(www.text);
+        }
+        else
+        {
+            Debug.Log("Error: " + www.error);
+            TextAsset fases = Resources.Load<TextAsset>("fase");
+            yield return new WaitForSeconds(0.002f);
+            LoadTiles(fases.ToString());
+        }
+#endif
     }
     private void LoadTiles(string stuff)
     {

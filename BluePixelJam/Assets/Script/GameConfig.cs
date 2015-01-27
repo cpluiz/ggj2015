@@ -32,6 +32,7 @@ public class GameConfig : MonoBehaviour {
 	}
 
     public void setFase(int fase) {
+        gameObject.GetComponent<AlwaysAlive>().fase = fase;
         faseAtual = fase;
     }
     public int getFase() {
