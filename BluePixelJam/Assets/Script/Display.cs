@@ -41,12 +41,21 @@ public class Display : MonoBehaviour
         Cutscene.GetComponentInChildren<Image>().sprite = Resources.Load<Sprite>("cutscenes/cutscene" + lvl);
         audioManager.playSound("The Builder", true);
         Cutscene.gameObject.SetActive(true);
-        if (CutsceneText != null) {
-            CutsceneText.text = cut[(lvl-1)];
-        }else{
-            CutsceneText = GameObject.FindWithTag("CutsceneText").GetComponent<Text>();
-            CutsceneText.text = cut[lvl - 1];
+        try {
+            if (CutsceneText != null)
+            {
+                CutsceneText.text = cut[(lvl - 1)];
+            }
+            else
+            {
+                CutsceneText = GameObject.FindWithTag("CutsceneText").GetComponent<Text>();
+                CutsceneText.text = cut[lvl - 1];
+            }
         }
+        catch (Exception e) {
+            CutsceneText.text = "Ainda sem texto definido";
+        }
+        
     }
 
     public void SkipCutscene() {
@@ -58,9 +67,9 @@ public class Display : MonoBehaviour
 
     public void StartDisplay(float maxTime){
         Time.timeScale = 0;
+        timer = maxTime;
         lvl = config.getFase();
         MainDisplay.gameObject.SetActive(false);
-        timer = maxTime;
         StartCutscene();
         PauseButton.gameObject.SetActive(true);
     }

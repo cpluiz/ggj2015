@@ -25,6 +25,7 @@ public class Player : MonoBehaviour {
     public void setActive(bool a) {
         active = a;
         gameObject.SetActive(a);
+        empurrando = false;
     }
 
 	void Awake(){
@@ -57,20 +58,13 @@ public class Player : MonoBehaviour {
                 tile.gameObject.AddComponent<Rigidbody2D>();
                 tile.rigidbody2D.fixedAngle = true;
                 empurrando = true;
-                InvokeRepeating("playArrastar", 0.1f, 1.5f);
+                tile.gameObject.GetComponent<Tile>().ArrastarSound(empurrando, audioManager);
             }else if(!grounded){
                 empurrando = false;
-                Destroy(tile.gameObject.rigidbody2D);
             }
-        }else if (tile.gameObject.rigidbody2D && gameObject.tag != "Player2"){
+        }else if (tile.gameObject.rigidbody2D && gameObject.tag != "Player2" && !grounded){
             Destroy(tile.gameObject.rigidbody2D);
         }
-    }
-
-    private void playArrastar() {
-        if (empurrando) { 
-           if(animRef.GetFloat("speed")>0 && !emcima){audioManager.playOneShot("arrastar");} 
-        } else { CancelInvoke("playArrastar"); }
     }
 
     void OnTriggerStay2D(Collider2D tile) {
@@ -82,12 +76,16 @@ public class Player : MonoBehaviour {
                 tile.gameObject.AddComponent<Rigidbody2D>();
                 tile.rigidbody2D.fixedAngle = true;
                 empurrando = true;
-                InvokeRepeating("playArrastar", 0.1f, 1.5f);
+                tile.gameObject.GetComponent<Tile>().ArrastarSound(empurrando, audioManager);
             }else{
                 empurrando = true;
+                tile.gameObject.GetComponent<Tile>().ArrastarSound(empurrando, audioManager);
             }
+        }else if(tile.gameObject.tag == "Empurravel" && grounded && tile.rigidbody2D != null){
+            Destroy(tile.gameObject.rigidbody2D);
         }
     }
+
 
     void OnTriggerExit2D(Collider2D tile) {
         if (gameObject.tag == "Player2" && empurrando){
@@ -106,8 +104,6 @@ public class Player : MonoBehaviour {
             grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, isGround);
             animRef.SetBool("jump", !grounded);
             float move = Input.GetAxis("Horizontal");
-            //motion.SetFloat("speed", Mathf.Abs(move));
-            //motion.SetBool("grounded", grounded);
             rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y);
 
 			animRef.SetFloat("speed",Mathf.Abs(move));
