@@ -25,7 +25,7 @@ public class Tile : MonoBehaviour {
                 Debug.Log("Algo errado que não está certo");
             }
         }
-        gameObject.GetComponent<BoxCollider2D>().size = new Vector2((tileDistance + 0.19f) / 2, (tileDistance + 0.19f) / 2);
+        gameObject.GetComponent<BoxCollider2D>().size = new Vector2((tileDistance + 0.17f) / 2, (tileDistance + 0.17f) / 2);
         ChangePriority();
     }
 
@@ -54,7 +54,7 @@ public class Tile : MonoBehaviour {
     public void ArrastarSound(bool empurra, AudioManager audioManager) {
         this.audioManager = audioManager;
         if (!empurrando){
-            InvokeRepeating("playArrastar", 0.1f, 1.5f);
+            InvokeRepeating("playArrastar", 0.1f, 0.9f);
         }
         empurrando = empurra;
     }

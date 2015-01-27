@@ -33,6 +33,11 @@ public class AlwaysAlive : MonoBehaviour
 
     IEnumerator Start()
     {
+#if UNITY_STANDALONE
+        TextAsset fases = Resources.Load<TextAsset>("fase");
+        yield return new WaitForSeconds(0.002f);
+        LoadTiles(fases.ToString());
+#else
         WWW www = new WWW(patch);
         yield return www;
         if (www.error == null)
@@ -42,7 +47,11 @@ public class AlwaysAlive : MonoBehaviour
         else
         {
             Debug.Log("Error: " + www.error);
+            TextAsset fases = Resources.Load<TextAsset>("fase");
+            yield return new WaitForSeconds(0.002f);
+            LoadTiles(fases.ToString());
         }
+#endif
     }
     private void LoadTiles(string stuff)
     {
