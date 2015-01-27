@@ -41,6 +41,14 @@ public class Player : MonoBehaviour {
 			rigidbody2D.AddForce(new Vector2(0, jumpForce));
             audioManager.playOneShot("jump");
 		}
+        float move = Input.GetAxis("Horizontal");
+        rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y);
+
+        animRef.SetFloat("speed", Mathf.Abs(move));
+
+        if ((move > 0 && !facingRight) || (move < 0 && facingRight)){
+            Flip();
+        }
 	}
 
     void OnTriggerEnter2D(Collider2D tile) {
@@ -103,15 +111,6 @@ public class Player : MonoBehaviour {
             }
             grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, isGround);
             animRef.SetBool("jump", !grounded);
-            float move = Input.GetAxis("Horizontal");
-            rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y);
-
-			animRef.SetFloat("speed",Mathf.Abs(move));
-
-            if ((move > 0 && !facingRight) || (move < 0 && facingRight))
-            {
-                Flip();
-            }
         }
     }
 

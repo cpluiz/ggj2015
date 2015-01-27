@@ -61,7 +61,7 @@ public class Tile : MonoBehaviour {
 
     private void playArrastar() {
         if (gameObject.rigidbody2D != null) {
-            if (transform.InverseTransformDirection(gameObject.rigidbody2D.velocity).x>0) {
+            if (Mathf.Abs(transform.InverseTransformDirection(gameObject.rigidbody2D.velocity).x)>0) {
                 audioManager.playOneShot("arrastar");
             } else { stopArrastar(); }
         } else { stopArrastar(); }
