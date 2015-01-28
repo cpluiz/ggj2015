@@ -31,6 +31,14 @@ public class PlayerManager : MonoBehaviour {
         GameObject.FindWithTag("MainCamera").GetComponent<CameraScript>().setTarget(players[player].transform);
         GameObject.FindWithTag("Display").GetComponent<Display>().setDisplay(player+1);
     }
+
+    public void changePlayer(){
+        if (playerActive < players.Length -1){
+            activatePlayer(playerActive + 1);
+        }else{
+            activatePlayer(0);
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {

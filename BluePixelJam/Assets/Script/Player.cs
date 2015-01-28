@@ -35,7 +35,7 @@ public class Player : MonoBehaviour {
 
 	void Awake(){
 		animRef = gameObject.GetComponent<Animator> ();
-        active = false;
+        active = gameObject.activeSelf;
 		facingRight = true;
 		groundRadius = 0.001f;
         audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
@@ -47,27 +47,7 @@ public class Player : MonoBehaviour {
 	void Update(){
 #if UNITY_ANDROID
         if (joystick == null) { Awake(); }
-        if (grounded && joystick.position.y>0 && Time.timeScale > 0 && active){
-			rigidbody2D.AddForce(new Vector2(0, jumpForce));
-            audioManager.playOneShot("jump");
-        }
-#else
-        if (grounded && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && Time.timeScale > 0 && active){
-			rigidbody2D.AddForce(new Vector2(0, jumpForce));
-            audioManager.playOneShot("jump");
-        }
-#endif
-
-#if UNITY_ANDROID
-        if (Time.timeScale > 0) {
-            if (joystick.position.x > 0 && move <= 1) { move += joySpeed; } else if (joystick.position.x < 0 && move >= 1) { move -= joySpeed; }
-            if (joystick.position.x == 0) {
-                if (move > 0) { move -= joySpeed; }else
-                if (move < 0) { move += joySpeed; }else{
-                    move = 0;
-                }
-            }
-        }
+        move = joystick.position.x;
 #else
         move = Input.GetAxis("Horizontal");
 #endif
@@ -134,12 +114,25 @@ public class Player : MonoBehaviour {
     public void player2stopCollision() { emcima = false; }
 
     void FixedUpdate() {
-        if (active) {
+        if (active && Time.timeScale > 0) {
             if (gameObject.tag == "Player2") {
                 animRef.SetBool("collidewall", (empurrando && grounded && !emcima));
             }
             grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, isGround);
             animRef.SetBool("jump", !grounded);
+#if UNITY_ANDROID
+            if (joystick == null) { Awake(); }
+            if (grounded && joystick.position.y > 0.7f && Time.timeScale > 0 && active)
+            {
+                rigidbody2D.AddForce(new Vector2(0, jumpForce));
+                audioManager.playOneShot("jump");
+            }
+#else
+            if (grounded && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && Time.timeScale > 0 && active){
+			    rigidbody2D.AddForce(new Vector2(0, jumpForce));
+                audioManager.playOneShot("jump");
+            }
+#endif
         }
     }
 

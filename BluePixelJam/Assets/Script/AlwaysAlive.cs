@@ -33,7 +33,7 @@ public class AlwaysAlive : MonoBehaviour
 
     IEnumerator Start()
     {
-#if UNITY_STANDALONE
+#if (UNITY_STANDALONE || UNITY_ANDROID)
         TextAsset fases = Resources.Load<TextAsset>("fase");
         yield return new WaitForSeconds(0.002f);
         LoadTiles(fases.ToString());
